@@ -10,7 +10,7 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 <Multi_key> <Multi_key> <d> <o> <u> <b> <t>  : "(￢_￢)"
 <Multi_key> <t> <f>                          : "(╯°□°）╯︵ ┻━┻"
 <Multi_key> <u> <f>                          : "┬─┬ ノ( ゜-゜ノ)"
-<Multi_key> <Multi_key> <l> <e> <n> <n> <y>  : "( ͡° ͜ʖ ͡°)
+<Multi_key> <Multi_key> <l> <e> <n> <n> <y>  : "( ͡° ͜ʖ ͡°)"
 <Multi_key> <"> <j>                          : "「"
 <Multi_key> <j> <">                          : "」"
 <Multi_key> <space> <space>                  : "‌"

@@ -1,0 +1,14 @@
+# environment variables
+## XDG
+export XDG_CURRENT_DESKTOP=sway
+export XDG_SESSION_TYPE=wayland
+
+## Qt
+export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_QPA_PLATFORM=wayland
+export QT_WAYLAND_DISABLE_WINDOWSDECORATION=1
+
+## Firefox
+export MOZ_ENABLE_WAYLAND=1
+export MOZ_DBUS_REMOTE=1
+

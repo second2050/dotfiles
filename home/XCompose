@@ -1,0 +1,21 @@
+# Import default rules from the system Compose file:
+include "/usr/share/X11/locale/en_US.UTF-8/Compose"
+
+# Import WinCompose's Emoji list:
+#include "/home/second2050/.emoji.XCompose"
+
+# Custom sequences
+<Multi_key> <s> <f>                          : "¯\\_(ツ)_/¯"
+<Multi_key> <Multi_key> <w> <a> <t>          : "(ಠ_ಠ)"
+<Multi_key> <Multi_key> <d> <o> <u> <b> <t>  : "(￢_￢)"
+<Multi_key> <t> <f>                          : "(╯°□°）╯︵ ┻━┻"
+<Multi_key> <u> <f>                          : "┬─┬ ノ( ゜-゜ノ)"
+<Multi_key> <Multi_key> <l> <e> <n> <n> <y>  : "( ͡° ͜ʖ ͡°)
+<Multi_key> <"> <j>                          : "「"
+<Multi_key> <j> <">                          : "」"
+<Multi_key> <space> <space>                  : "‌"
+
+# Emojis
+<Multi_key> <Multi_key> <e> <y> <e> <s>      : "👀"
+<Multi_key> <Multi_key> <t> <h> <i> <n> <k>  : "🤔"
+

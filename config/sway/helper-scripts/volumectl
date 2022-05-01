@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+# Settings
+SINK=@DEFAULT_SINK@
+VOLUME_LIMIT=100
+VOLUME_STEP=5
+
+# Helper functions
+function volCheck () {
+	pactl get-sink-volume $SINK | grep -Eo --max-count=1 '[0-9]+\%' | head -1 | tr -d '%'
+}
+
+# Set volume to VOLUME_LIMIT if it is above it for some reason
+if [[ $(volCheck) -gt $VOLUME_LIMIT ]]; then
+	pactl set-sink-volume $SINK $VOLUME_LIMIT%
+fi
+
+# Volume increase
+case $1 in
+	"max")
+		pactl set-sink-volume $SINK $VOLUME_LIMIT%
+		;;
+	"plus")
+		# Current_Volume < (Volume_Limit - Volume_Step)
+		if [[ $(volCheck) -lt $(($VOLUME_LIMIT - $VOLUME_STEP)) ]]; then
+			pactl set-sink-volume $SINK +$VOLUME_STEP%
+		else
+			pactl set-sink-volume $SINK $VOLUME_LIMIT%
+		fi
+		;;
+	"minus")
+		pactl set-sink-volume $SINK -$VOLUME_STEP%
+		;;
+	"mute")
+		pactl set-sink-mute $SINK toggle
+		;;
+	*)
+		echo "Usage: $0 plus 5"
+		echo "       $0 minus 5"
+		echo "       $0 mute"
+		echo "       $0 max"
+		exit -1
+		;;
+esac

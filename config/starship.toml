@@ -1,0 +1,46 @@
+# prompt
+format = """
+$username[@](red)$hostname $directory$git_branch$git_commit$git_state$git_status$jobs$cmd_duration
+$shell$character"""
+
+[character]
+success_symbol = ">"
+error_symbol = "[>](red)"
+vicmd_symbol = "<"
+
+[directory]
+truncate_to_repo = false
+truncation_length = 6
+truncation_symbol = "…/"
+style = "white"
+
+[hostname]
+ssh_only = false
+format = "[$hostname]($style)"
+style = "bold white"
+
+[username]
+show_always = true
+format = "[$user]($style)"
+style_user = "bold white"
+
+[git_branch]
+format = "[$symbol](bold red)$branch"
+
+[git_status]
+format = " [$all_status$ahead_behind]($style)"
+untracked = "⚡"
+
+[shell]
+format = "$indicator" # eliminate forced space
+disabled = false # not enabled by default ö.ö
+# indicator strings
+bash_indicator = "BA "
+fish_indicator = ""
+zsh_indicator = "Z! "
+powershell_indicator = "PS "
+ion_indicator = "ION"
+elvish_indicator = "EL "
+tcsh_indicator = "TC "
+xonsh_indicator = "XON"
+unknown_indicator = "?? "

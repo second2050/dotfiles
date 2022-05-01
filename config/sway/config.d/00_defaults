@@ -1,0 +1,4 @@
+# Keyboard Layout
+input * {
+	xkb_layout "gb"
+}

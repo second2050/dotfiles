@@ -1,0 +1,7 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = second2050
+	email = git@second2050.me
+[init]
+	defaultBranch = dev

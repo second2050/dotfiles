@@ -1,0 +1,5 @@
+for_window [tiling] border none
+for_window [floating] border none
+gaps inner 6
+smart_gaps on
+

@@ -1,0 +1,17 @@
+# Audio Keys
+bindsym XF86AudioRaiseVolume exec $HOME/.config/sway/helper-scripts/volumectl plus
+bindsym XF86AudioLowerVolume exec $HOME/.config/sway/helper-scripts/volumectl minus
+bindsym XF86AudioMute exec $HOME/.config/sway/helper-scripts/volumectl mute
+
+# Screenshot
+bindsym $mod+shift+print exec grim -g "$(slurp)" - | swappy -f -
+bindsym $mod+print exec grim -g "0,0 1280x800" - | swappy -f -
+
+# ThinkVantage
+bindsym XF86Launch1 exec swaynag -t warning \
+    -m 'You pressed the exit shortcut' -b 'Logout' 'swaymsg exit' -b 'Reboot' 'systemctl reboot' -b 'Poweroff' 'systemctl poweroff'
+
+# Compose
+input * {
+	xkb_options "compose:caps"
+}

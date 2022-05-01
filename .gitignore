@@ -1,0 +1,5 @@
+# Sway Per-Machine Config
+config/sway/config.d/10_wallpaper
+
+# Ranger plugins
+config/ranger/plugins/*

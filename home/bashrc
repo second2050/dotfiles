@@ -1,0 +1,13 @@
+#
+# ~/.bashrc
+#
+SHELL=/bin/bash
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# starship prompt
+eval "$(starship init bash)"
+
+alias ls='ls --color=auto'
+PS1='[\u@\h \W]\$ '

@@ -1,0 +1,3 @@
+# Created by newuser for 5.8.1
+SHELL=/usr/bin/zsh
+eval "$(starship init zsh)"

@@ -9,9 +9,14 @@ bindsym $mod+print exec grim -g "0,0 1280x800" - | swappy -f -
 
 # ThinkVantage
 bindsym XF86Launch1 exec swaynag -t warning \
-    -m 'You pressed the exit shortcut' -b 'Logout' 'swaymsg exit' -b 'Reboot' 'systemctl reboot' -b 'Poweroff' 'systemctl poweroff'
+    -m "You pressed the exit shortcut" -b 'Logout' 'swaymsg exit' -b 'Reboot' 'systemctl reboot' -b 'Poweroff' 'systemctl poweroff'
 
 # Compose
 input * {
 	xkb_options "compose:caps"
 }
+
+# FN Chords
+bindsym XF86Fullscreen fullscreen
+bindsym XF86ScreenSaver exec "swaylock"
+

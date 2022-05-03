@@ -210,4 +210,4 @@ bar {
     swaybar_command waybarbottom
 }
 
-include $HOME/.config/sway/config.d/*
+include $HOME/.config/sway/config.d/*.config

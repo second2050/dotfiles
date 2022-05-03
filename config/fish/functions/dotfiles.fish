@@ -40,6 +40,11 @@ function dotfiles --description="manage the dotfile repo"
 			$DOTFILES_DIR/setup_symlinks.sh
 			return $status
 
+		case 'status'
+			cd $DOTFILES_DIR
+			git status -sbv
+			return $status
+
 		case 'commit'
 			cd $DOTFILES_DIR
 			git add .
@@ -48,15 +53,17 @@ function dotfiles --description="manage the dotfile repo"
 			else
 				git commit -m "Update from $(date +"%Y-%m-%d %T")"
 			end
+			return $status
 
 		case 'pull'
 			cd $DOTFILES_DIR
 			git pull
 			dotfiles deploy
-
+			return $status
 		case 'push'
 			cd $DOTFILES_DIR
 			git push
+			return $status
 
 		case '*'
 			echo "Available subcommands: add, remove, deploy, commit, pull, push"

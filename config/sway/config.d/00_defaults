@@ -2,3 +2,7 @@
 input * {
 	xkb_layout "gb"
 }
+
+# Notification Server
+exec mako
+exec_always makoctl reload

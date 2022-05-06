@@ -1,5 +1,6 @@
 function dotfiles --description="manage the dotfile repo"
 	set DOTFILES_DIR "$HOME/.dotfiles"
+	set OLD_PWD (pwd)
 	switch $argv[1]
 		case 'add'
 			if test (pwd) != "$HOME/.config"
@@ -38,11 +39,13 @@ function dotfiles --description="manage the dotfile repo"
 			echo "Redeploying dotfiles"
 			cd $DOTFILES_DIR
 			$DOTFILES_DIR/setup_symlinks.sh
+			cd $OLD_PWD
 			return $status
 
 		case 'status'
 			cd $DOTFILES_DIR
 			git status -sbv
+			cd $OLD_PWD
 			return $status
 
 		case 'commit'
@@ -53,16 +56,19 @@ function dotfiles --description="manage the dotfile repo"
 			else
 				git commit -m "Update from $(date +"%Y-%m-%d %T")"
 			end
+			cd $OLD_PWD
 			return $status
 
 		case 'pull'
 			cd $DOTFILES_DIR
 			git pull
 			dotfiles deploy
+			cd $OLD_PWD
 			return $status
 		case 'push'
 			cd $DOTFILES_DIR
 			git push
+			cd $OLD_PWD
 			return $status
 
 		case '*'

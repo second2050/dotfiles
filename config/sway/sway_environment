@@ -14,3 +14,15 @@ export MOZ_DBUS_REMOTE=1
 
 ## Default Terminal
 export TERM=foot
+
+## Keyring and SSH Agent
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+export SSH_ASKPASS=/usr/lib/seahorse/ssh-askpass
+export SSH_ASKPASS_REQUIRE=prefer
+
+## IME
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+

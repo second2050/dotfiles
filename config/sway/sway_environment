@@ -12,9 +12,6 @@ export QT_WAYLAND_DISABLE_WINDOWSDECORATION=1
 export MOZ_ENABLE_WAYLAND=1
 export MOZ_DBUS_REMOTE=1
 
-## Default Terminal
-export TERM=foot
-
 ## Keyring and SSH Agent
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK

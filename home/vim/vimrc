@@ -1,0 +1,12 @@
+" disable vi compatibility
+set nocompatible
+
+" setup general look of vim
+set number                " line numbers
+syntax on                 " syntax highlighting
+filetype on
+filetype plugin on
+filetype indent on
+set wildmenu
+set wildmode=list:longest
+

@@ -2,6 +2,7 @@
 set nocompatible
 
 " setup general look of vim
+set laststatus=2          " show powerline always
 set number                " line numbers
 syntax on                 " syntax highlighting
 filetype on
@@ -9,4 +10,8 @@ filetype plugin on
 filetype indent on
 set wildmenu
 set wildmode=list:longest
-
+" tab settings
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab

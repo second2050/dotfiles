@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/window"],
     "modules-center": [],
-    "modules-right": ["custon/media", "network", "pulseaudio", "cpu", "memory", "backlight", "battery", "battery#bat2", "clock"],
+    "modules-right": ["custom/media", "network", "pulseaudio", "cpu", "memory", "backlight", "battery", "battery#bat2", "clock"],
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",

@@ -10,6 +10,7 @@ filetype plugin on
 filetype indent on
 set wildmenu
 set wildmode=list:longest
+set fillchars=eob:\       " hide EndOfBuffer characters (tilde)
 " tab settings
 set tabstop=4
 set shiftwidth=4
@@ -18,4 +19,12 @@ set expandtab
 " YouCompleteMe settings
 set completeopt-=preview " disable preview pane at the top
 let g:ycm_add_preview_to_completeopt=0
+" NERDTree settings
+autocmd VimEnter * NERDTree | wincmd p " Start NERDTree and put the cursor back in the other window.
 
+" keybindings
+" NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n>     :NERDTreeMirror<CR>:NERDTreeFocus<CR>
+nnoremap <C-t>     :NERDTreeToggle<CR>
+nnoremap <C-f>     :NERDTreeFind<CR>

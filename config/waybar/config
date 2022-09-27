@@ -45,7 +45,8 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
+        //"format-ethernet": "{ipaddr}/{cidr} ",
+        "format-ethernet": "Ethernet ",
         "tooltip-format": "{ifname} via {gwaddr} 爵",
         "format-linked": "{ifname} (No IP) 爵",
         "format-disconnected": "Disconnected ",

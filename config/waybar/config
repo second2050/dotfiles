@@ -3,7 +3,8 @@
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 25, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 0, // Gaps between modules (4px)
+    "spacing": 4, // Gaps between modules (4px)
+    "margin": "4 4 0 4", // top,right,bottom,left
     // Choose the order of the modules
     "modules-left": ["sway/window"],
     "modules-center": [],
@@ -44,7 +45,7 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ",
+        "format-wifi": "{essid}  ",
         //"format-ethernet": "{ipaddr}/{cidr} ",
         "format-ethernet": "Ethernet ",
         "tooltip-format": "{ifname} via {gwaddr} 爵",
@@ -70,6 +71,12 @@
             "default": ["奄", "奔", "墳"]
         },
         "on-click": "pavucontrol"
+    },
+    "sway/window": {
+        "icon": true,
+        "rewrite": {
+            "": "Sway Window Manager"
+        }
     }
 }
 

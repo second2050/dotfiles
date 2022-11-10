@@ -3,7 +3,8 @@
     "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 25, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 6, // Gaps between modules (4px)
+    "spacing": 4, // Gaps between modules (4px)
+    "margin": "0 4 4 4", // top,right,bottom,left
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": [],
@@ -35,10 +36,10 @@
         "tooltip": false,
         "format": "{icon}",
         "format-icons": {
-            "notification": "<span foreground='red'><sup></sup></span> ",
-            "none": " ",
-            "dnd-notification": "<span foreground='red'><sup></sup></span> ",
-            "dnd-none": " "
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": ""
         },
         "return-type": "json",
         "exec-if": "which swaync-client",

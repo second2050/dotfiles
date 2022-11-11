@@ -22,7 +22,3 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
-# DEBUG
-echo "Environment setup!"
-read -p "Press Enter to continue"
-

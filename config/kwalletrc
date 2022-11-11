@@ -1,0 +1,8 @@
+[Wallet]
+First Use=false
+Close When Idle=false
+Close on Screensaver=false
+
+[org.freedesktop.secrets]
+apiEnabled=true
+

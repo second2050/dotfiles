@@ -12,14 +12,17 @@ export QT_WAYLAND_DISABLE_WINDOWSDECORATION=1
 export MOZ_ENABLE_WAYLAND=1
 export MOZ_DBUS_REMOTE=1
 
-## Keyring and SSH Agent
-eval $(gnome-keyring-daemon --start)
-export SSH_AUTH_SOCK
-export SSH_ASKPASS=/usr/lib/seahorse/ssh-askpass
+## SSH Agent
+eval $(ssh-agent) > /dev/null # silence agent!
+export SSH_ASKPASS=/usr/bin/ksshaskpass
 export SSH_ASKPASS_REQUIRE=prefer
 
 ## IME
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
+
+# DEBUG
+echo "Environment setup!"
+read -p "Press Enter to continue"
 

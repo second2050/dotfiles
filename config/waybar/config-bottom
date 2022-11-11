@@ -36,9 +36,9 @@
         "tooltip": false,
         "format": "{icon}",
         "format-icons": {
-            "notification": "<span foreground='red'><sup></sup></span>",
+            "notification": "<span foreground='red'></span>",
             "none": "",
-            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-notification": "",
             "dnd-none": ""
         },
         "return-type": "json",
@@ -60,8 +60,7 @@
         "on-click": "playerctl play-pause"
     },
     "custom/nwg-menu": {
-        "format": "  Menu",
-        "exec": "echo hi", // I just need a button to open nwg-menu but the exec cmd must return something
+        "format": " Menu",
         "on-click": "nwg-menu -term foot -mb 4 -ml 4 -fm 'foot ranger' -d"
     }
 }

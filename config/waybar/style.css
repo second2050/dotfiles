@@ -2,7 +2,7 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Noto Sans, Delugia Book, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
-    font-weight: bold;
+    /* font-weight: bold; */
     min-height: 0; 
 }
 
@@ -37,11 +37,6 @@ window#waybar {
     background-color: #eb4d4b;
 }
 
-#mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
-}
-
 #clock,
 #battery.charging,
 #cpu,
@@ -59,11 +54,25 @@ window#waybar {
 #clock,
 #mpd,
 #custom-notification,
-#window{
+#window,
+#custom-waybar-mpris,
+#custom-nwg-menu {
     border-radius: 6px;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 0 6px;
     color: #ffffff;
+}
+
+#window {
+    margin-left: 0px;
+    font-weight: bold;
+}
+window#waybar.empty {
+    margin-left: unset;
+}
+
+#mode {
+    background-color: rgba(235, 61, 75, 0.8);
 }
 
 #workspaces {
@@ -229,3 +238,8 @@ label:focus {
 #keyboard-state > label.locked {
     background: rgba(0, 0, 0, 0.2);
 }
+
+#custom-nwg-menu {
+    color: #1793d1;
+}
+

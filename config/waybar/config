@@ -74,6 +74,7 @@
     },
     "sway/window": {
         "icon": true,
+        "icon-size": 24,
         "rewrite": {
             "": "Sway Window Manager"
         }

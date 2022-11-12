@@ -1,0 +1,9 @@
+#window,
+#entry:selected {
+    border-radius: 6px;
+}
+#outer-box {
+    padding: 4px;
+    padding-bottom: 0px;
+}
+

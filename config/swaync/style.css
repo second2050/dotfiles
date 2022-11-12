@@ -161,6 +161,7 @@
 
 .control-center {
   background: @cc-bg;
+  border-radius: 6px;
 }
 
 .control-center-list {

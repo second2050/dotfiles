@@ -4,8 +4,8 @@
   "positionY": "bottom",
   "control-center-margin-top": 4,
   "control-center-margin-bottom": 4,
-  "control-center-margin-right": 0,
-  "control-center-margin-left": 0,
+  "control-center-margin-right": 4,
+  "control-center-margin-left": 4,
   "notification-icon-size": 64,
   "notification-body-image-height": 100,
   "notification-body-image-width": 200,
@@ -50,7 +50,7 @@
       "text": "Label Text"
     },
     "mpris": {
-      "image-size": 96,
+      "image-size": 50,
       "image-radius": 12
     }
   }

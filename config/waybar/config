@@ -8,11 +8,14 @@
     // Choose the order of the modules
     "modules-left": ["sway/window"],
     "modules-center": [],
-    "modules-right": ["custom/media", "network", "pulseaudio", "cpu", "memory", "backlight", "battery", "battery#bat2", "clock"],
+    "modules-right": ["idle_inhibitor", "network", "pulseaudio", "cpu", "memory", "backlight", "battery", "battery#bat2", "clock"],
+    "include": "$HOME/.config/waybar/custom-modules.json",
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%H:%M:%S}",
+        "format-alt": "{:%Y-%m-%d}",
+        "interval": 1
     },
     "cpu": {
         "format": "{usage}% @ {avg_frequency}GHz ",
@@ -78,6 +81,15 @@
         "rewrite": {
             "": "Sway Window Manager"
         }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": "﯈"
+        },
+        "tooltip-format-activated": "Inhibiting idle behavior...",
+        "tooltip-format-deactivated": "Inhibit idle behavior"
     }
 }
 

@@ -9,6 +9,7 @@
     "modules-left": ["custom/nwg-menu", "sway/workspaces", "sway/mode"],
     "modules-center": [],
     "modules-right": ["custom/waybar-mpris", "tray", "custom/notification"],
+    "include": "$HOME/.config/waybar/custom-modules.json",
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -31,37 +32,6 @@
     "tray": {
         // "icon-size": 21,
         "spacing": 10
-    },
-    "custom/notification": {
-        "tooltip": false,
-        "format": "{icon}",
-        "format-icons": {
-            "notification": "<span foreground='red'></span>",
-            "none": "",
-            "dnd-notification": "",
-            "dnd-none": ""
-        },
-        "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click": "swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
-        "escape": true
-    },
-    "custom/waybar-mpris": {
-        "format": "{icon} {} ",
-        "format-icons": {
-            "playing": ">",
-            "paused": "II"
-        },
-        "return-type": "json",
-        "exec-if": "which waybar-mpris",
-        "exec": "waybar-mpris --position --autofocus --order='ARTIST:TITLE'",
-        "on-click": "playerctl play-pause"
-    },
-    "custom/nwg-menu": {
-        "format": " Menu",
-        "on-click": "nwg-menu -term foot -mb 4 -ml 4 -fm 'foot ranger' -d"
     }
 }
 

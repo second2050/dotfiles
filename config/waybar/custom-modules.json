@@ -28,6 +28,7 @@
     },
     "custom/nwg-menu": {
         "format": " Menu",
+        "tooltip": false,
         "on-click": "nwg-menu -term foot -mb 4 -ml 4 -fm 'foot ranger' -d"
     }
 }

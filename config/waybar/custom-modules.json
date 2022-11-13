@@ -16,14 +16,10 @@
         "escape": true
     },
     "custom/waybar-mpris": {
-        "format": "{icon} {} ",
-        "format-icons": {
-            "playing": ">",
-            "paused": "II"
-        },
+        "format": "{icon}{}",
         "return-type": "json",
         "exec-if": "which waybar-mpris",
-        "exec": "waybar-mpris --position --autofocus --order='ARTIST:TITLE'",
+        "exec": "waybar-mpris --autofocus --pause='契' --play='' --ORDER='ARTIST:TITLE:SYMBOL'",
         "on-click": "playerctl play-pause"
     },
     "custom/nwg-menu": {

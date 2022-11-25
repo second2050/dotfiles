@@ -14,20 +14,32 @@
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%H:%M:%S}",
-        "format-alt": "{:%Y-%m-%d}",
-        "interval": 1
+        "format-alt": "{:%Y-%m-%d %H:%M:%S %Z}",
+        "today-format": "<b><span foreground='#00afff'>{}</span></b>",
+        "interval": 1,
+        "timezones": [
+            "",
+            "UTC",
+            "Japan",
+            "US/Eastern"
+        ],
+        "smooth-scrolling-threshold": 2
     },
     "cpu": {
-        "format": "{usage}% @ {avg_frequency}GHz ",
-        "tooltip": false
+        "format": "{usage}% ",
+        "tooltip": false,
+        "interval": 1,
+        "on-click": "true"
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% ",
+        "on-click": "true"
     },
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", ""]
+        "format-icons": ["", "", "", "", "", ""],
+        "on-click": "true"
     },
     "battery": {
         "states": {
@@ -73,14 +85,17 @@
             "car": "",
             "default": ["奄", "奔", "墳"]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "on-click-middle" : "pactl set-sink-mute @DEFAULT_SINK@",
+        "smooth-scrolling-threshold": 2
     },
     "sway/window": {
         "icon": true,
         "icon-size": 24,
         "rewrite": {
             "": "Sway Window Manager"
-        }
+        },
+        "on-click": "true"
     },
     "idle_inhibitor": {
         "format": "{icon}",

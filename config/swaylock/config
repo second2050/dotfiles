@@ -1,0 +1,41 @@
+# background
+#image="$HOME/Pictures/Isekaijoucho - Negai.png"
+screenshot
+scaling=fill
+color=000000
+effect-scale=0.5
+effect-blur=5x3
+fade-in=3
+
+# clock
+clock
+timestr=%H:%M
+datestr=%Y-%m-%d
+text-color=ffffff
+
+# idle & input
+grace=3
+indicator
+show-failed-attempts
+ignore-empty-password
+inside-color=000000bf
+indicator-thickness=7
+line-color=00000000
+ring-color=0000007f
+separator-color=00000000
+key-hl-color=3971ed
+bs-hl-color=cc342b
+
+# verifying
+line-ver-color=00000000
+ring-ver-color=0000007f
+
+# wrong
+inside-wrong-color=cc342b
+line-wrong-color=00000000
+ring-wrong-color=cc342b7f
+
+# clearing
+inside-clear-color=3971ed
+line-clear-color=00000000
+ring-clear-color=0000007f

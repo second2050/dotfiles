@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+filePath="$(readlink -f "$1")"
+fillMode=fill
+
+# check if file exists
+if [[ ! -f $filePath ]]; then
+	echo "File does not exist!"
+	exit 1
+fi
+
+# set fill mode to user input if given
+if [ -n "${2+1}" ];then
+	fillMode=$2
+fi
+
+# send new wallpaper to sway
+swaymsg "output * bg \"$filePath\" $fillMode"
+swaymsgResult=$?
+
+# if sway returned 0 then set it in the config file
+if [[ $swaymsgResult == 0 ]];then
+	( echo "output * bg \"$filePath\" $fillMode"; echo "" ) > $HOME/.config/sway/config.d/10_wallpaper.conf
+	echo "Set Wallpaper!"
+else
+	# else return sways error code
+	exit $swaymsgResult
+fi
+

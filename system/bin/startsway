@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+if [ -f "$HOME/.config/sway/sway_environment" ]; then
+    . "$HOME/.config/sway/sway_environment"
+fi
+exec dbus-run-session -- sway $STARTSWAY_PARAMETERS
+

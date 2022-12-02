@@ -1,3 +1,7 @@
+# Sway parameters
+## Disable "direct scan out" to fix PRIME offload render synchronization
+export STARTSWAY_PARAMETERS="--unsupported-gpu -D noscanout"
+
 # environment variables
 ## XDG
 export XDG_CURRENT_DESKTOP=sway
@@ -22,3 +26,5 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
+## MangoHud
+export MANGOHUD=1

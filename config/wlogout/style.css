@@ -1,0 +1,64 @@
+* {
+	background-image: none;
+}
+window {
+	background-color: rgba(0, 0, 0, 0.25);
+}
+button {
+    color: #FFFFFF;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 6px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 50%;
+}
+
+button:focus, button:active, button:hover {
+	background-color: rgba(0, 175, 255, 1);
+	color: #000000;
+	outline-style: none;
+}
+
+/* Base states of the buttons */
+#lock {
+    background-image: image(url("lock.svg"));
+}
+
+#logout {
+    background-image: image(url("logout.svg"));
+}
+
+#shutdown {
+    background-image: image(url("poweroff.svg"));
+}
+
+#reboot {
+    background-image: image(url("reboot.svg"));
+}
+
+#exit {
+	background-image: image(url("exit.svg"));
+}
+
+/* Hover/Focused/Active states of the buttons */
+#lock:hover, #lock:focus, #lock:active {
+    background-image: image(url("lock-hover.svg"));
+}
+
+#logout:hover, #logout:focus, #logout:active {
+    background-image: image(url("logout-hover.svg"));
+}
+
+#shutdown:hover, #shutdown:focus, #shutdown:active {
+    background-image: image(url("poweroff-hover.svg"));
+}
+
+#reboot:hover, #reboot:focus, #reboot:active {
+    background-image: image(url("reboot-hover.svg"));
+}
+
+#exit:hover, #exit:focus, #exit:active {
+    background-image: image(url("exit-hover.svg"));
+}

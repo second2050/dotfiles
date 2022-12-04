@@ -1,0 +1,28 @@
+{
+    "label" : "lock",
+    "action" : "swaylock --grace 0 --fade-in 0.25",
+    "text" : "",
+    "keybind" : "l",
+    "circular" : false
+}
+{
+    "label" : "logout",
+    "action" : "swaymsg exit",
+    "text" : "",
+    "keybind" : "e",
+    "circular" : false
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "",
+    "keybind" : "r",
+    "circular" : false
+}
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "",
+    "keybind" : "s",
+    "circular" : false
+}

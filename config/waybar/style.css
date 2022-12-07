@@ -153,7 +153,7 @@ window#waybar { /* base window of waybar */
     animation-direction: alternate;
 }
 
-#battery.critical:not(.charging) {
+#battery.critical:not(.charging):hover {
     background-color: @module-battery;
     color: @module-bg;
     animation-name: blink;
@@ -278,5 +278,10 @@ label:focus {
 
 #taskbar {
     padding: 0;
+}
+
+#taskbar button {
+    transition-property: all;
+    transition-duration: .5s;
 }
 

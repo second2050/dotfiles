@@ -1,13 +1,13 @@
 {
     "label" : "lock",
-    "action" : "swaylock --grace 0 --fade-in 0.25",
+    "action" : "swaylockd --grace 0 --fade-in 0.25",
     "text" : "",
     "keybind" : "l",
     "circular" : false
 }
 {
     "label" : "logout",
-    "action" : "swaymsg exit",
+    "action" : "loginctl terminate-session $XDG_SESSION_ID",
     "text" : "",
     "keybind" : "e",
     "circular" : false

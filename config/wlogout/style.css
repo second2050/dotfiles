@@ -41,6 +41,9 @@ button:focus, button:active, button:hover {
 #exit {
 	background-image: image(url("exit.svg"));
 }
+#hibernate {
+	background-image: image(url("hibernate.svg"));
+}
 
 /* Hover/Focused/Active states of the buttons */
 #lock:hover, #lock:focus, #lock:active {
@@ -61,4 +64,7 @@ button:focus, button:active, button:hover {
 
 #exit:hover, #exit:focus, #exit:active {
     background-image: image(url("exit-hover.svg"));
+}
+#hibernate:hover, #hibernate:focus, #hibernate:active {
+	background-image: image(url("hibernate-hover.svg"));
 }

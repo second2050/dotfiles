@@ -13,6 +13,13 @@
     "circular" : false
 }
 {
+    "label" : "hibernate",
+    "action" : "systemctl hibernate",
+    "text" : "",
+    "keybind" : "h",
+    "circular" : false
+}
+{
     "label" : "reboot",
     "action" : "systemctl reboot",
     "text" : "",

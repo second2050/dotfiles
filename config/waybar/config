@@ -8,7 +8,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/window"],
     "modules-center": [],
-    "modules-right": ["idle_inhibitor", "network", "pulseaudio", "cpu", "memory", "backlight", "battery", "battery#bat2", "clock"],
+    "modules-right": ["custom/dsbattery", "idle_inhibitor", "network", "pulseaudio", "cpu", "memory", "backlight", "battery", "battery#bat2", "clock"],
     "include": "$HOME/.config/waybar/custom-modules.json",
     "clock": {
         // "timezone": "America/New_York",

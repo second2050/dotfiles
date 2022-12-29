@@ -25,6 +25,13 @@
     "custom/nwg-menu": {
         "format": " Menu",
         "tooltip": false,
-        "on-click": "nwg-menu -term foot -mb 4 -ml 4 -fm 'foot ranger' -d"
+        "on-click": "nwg-menu -term foot -mb 4 -ml 4 -fm 'foot ranger' -d -cmd-lock 'swaylock --grace 0 --fade-in 0' -cmd-logout 'loginctl terminate-session $XDG_SESSION_ID'"
+    },
+    "custom/dsbattery": {
+        "format": "{}",
+        "interval": 3,
+        "escape": true,
+        "exec": "dsbattery",
+        "on-click-right": "dsbattery -d"
     }
 }

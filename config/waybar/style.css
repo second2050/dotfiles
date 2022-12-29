@@ -53,7 +53,8 @@ window#waybar { /* base window of waybar */
 #window,
 #custom-waybar-mpris,
 #custom-nwg-menu,
-#taskbar {
+#taskbar,
+#custom-dsbattery {
     border-radius: 6px;
     background-color: @module-bga;
     padding: 0 6px;
@@ -285,3 +286,7 @@ label:focus {
     transition-duration: .5s;
 }
 
+#custom-dsbattery:hover {
+    background-color: @module-fg;
+    color: @module-bg;
+}

@@ -64,7 +64,7 @@
   padding: 0;
   border-radius: 100%;
   margin-top: 10px;
-  margin-right: 16px;
+  margin-right: 10px;
   box-shadow: none;
   border: none;
   min-width: 24px;
@@ -112,12 +112,12 @@
 
 /* add bottom border radius to eliminate clipping */
 .notification-action:first-child {
-  border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 6px;
 }
 
 .notification-action:last-child {
-  border-bottom-right-radius: 10px;
-  border-right: 1px solid @noti-border-color;
+  border-bottom-right-radius: 6px;
+  border-right: 2px solid @noti-border-color;
 }
 
 .image {
@@ -143,7 +143,10 @@
   background: transparent;
   color: white;
   text-shadow: none;
-  margin-right: 18px;
+  margin-right: 0px;
+}
+.notification-row:hover .time {
+  margin-right: 13px;
 }
 
 .body {

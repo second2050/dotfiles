@@ -26,18 +26,18 @@
         "smooth-scrolling-threshold": 2
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}% <span weight='normal'></span>",
         "tooltip": false,
         "interval": 1,
         "on-click": "true"
     },
     "memory": {
-        "format": "{}% ",
+        "format": "{}% <span weight='normal'></span>",
         "on-click": "true"
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
+        "format": "{percent}% <span weight='normal'>{icon}</span>",
         "format-icons": ["", "", "", "", "", ""],
         "on-click": "true"
     },
@@ -47,10 +47,10 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format": "{capacity}% <span weight='normal'>{icon}</span>",
+        "format-charging": "{capacity}% <span weight='normal'></span>",
+        "format-plugged": "{capacity}% <span weight='normal'></span>",
+        "format-alt": "{time} <span weight='normal'>{icon}</span>",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", "", "", "", "", "", ""]
@@ -60,22 +60,22 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ",
+        "format-wifi": "{essid} <span weight='normal'></span>",
         //"format-ethernet": "{ipaddr}/{cidr} ",
-        "format-ethernet": "Ethernet ",
-        "tooltip-format": "{ifname} via {gwaddr} 爵",
-        "format-linked": "{ifname} (No IP) 爵",
+        "format-ethernet": "Ethernet <span weight='normal'></span>",
+        "tooltip-format": "{ifname} via {gwaddr} <span weight='normal'>爵</span>",
+        "format-linked": "{ifname} (No IP) <span weight='normal'>爵</span>",
         "format-disconnected": "",
-        "format-alt": "{ifname}: {ipaddr}/{cidr} 爵"
+        "format-alt": "{ifname}: {ipaddr}/{cidr} <span weight='normal'>爵</span>"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-bluetooth-muted": " {icon}",
-        "format-muted": "婢",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format": "{volume}% <span weight='normal'>{icon}</span>",
+        "format-bluetooth": "{volume}% <span weight='normal'>{icon}</span>",
+        "format-bluetooth-muted": "<span weight='normal'>{icon}</span>",
+        "format-muted": "<span weight='normal'>婢</span>",
+        "format-source": "{volume}% <span weight='normal'></span>",
+        "format-source-muted": "<span weight='normal'></span>",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -100,8 +100,8 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": "﯈"
+            "activated": "<span weight='normal'></span>",
+            "deactivated": "<span weight='normal'>﯈</span>"
         },
         "tooltip-format-activated": "Inhibiting idle behavior...",
         "tooltip-format-deactivated": "Inhibit idle behavior"

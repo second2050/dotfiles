@@ -4,9 +4,9 @@
         "format": "{icon}",
         "format-icons": {
             "notification": "<span foreground='red'></span>",
-            "none": "",
-            "dnd-notification": "",
-            "dnd-none": ""
+            "none": "<span weight='normal'></span>",
+            "dnd-notification": "<span weight='normal'></span>",
+            "dnd-none": "<span weight='normal'></span>"
         },
         "return-type": "json",
         "exec-if": "which swaync-client",
@@ -23,7 +23,7 @@
         "on-click": "playerctl play-pause"
     },
     "custom/nwg-menu": {
-        "format": " Menu",
+        "format": "<span weight='normal'></span> Menu",
         "tooltip": false,
         "on-click": "nwg-menu -term foot -mb 4 -ml 4 -fm 'foot ranger' -d -cmd-lock 'swaylock --grace 0 --fade-in 0' -cmd-logout 'loginctl terminate-session $XDG_SESSION_ID'"
     },

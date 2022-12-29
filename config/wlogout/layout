@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "swaylockd --grace 0 --fade-in 0.25",
+    "action" : "swaylock --grace 0 --fade-in 0",
     "text" : "",
     "keybind" : "l",
     "circular" : false

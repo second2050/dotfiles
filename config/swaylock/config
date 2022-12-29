@@ -1,11 +1,12 @@
 # background
 #image="$HOME/Pictures/Isekaijoucho - Negai.png"
-screenshot
+#screenshot
 scaling=fill
-color=000000
+color=0000003f
 effect-scale=0.5
 effect-blur=5x3
 fade-in=3
+daemonize
 
 # clock
 clock

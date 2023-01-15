@@ -60,13 +60,15 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} <span weight='normal'></span>",
+        "format": "{bandwidthTotalBits} <span weight='normal'>李</span>",
+        // "format-wifi": "{essid} <span weight='normal'></span>",
         //"format-ethernet": "{ipaddr}/{cidr} ",
-        "format-ethernet": "Ethernet <span weight='normal'></span>",
+        // "format-ethernet": "Ethernet <span weight='normal'></span>",
         "tooltip-format": "{ifname} via {gwaddr} <span weight='normal'>爵</span>",
         "format-linked": "{ifname} (No IP) <span weight='normal'>爵</span>",
         "format-disconnected": "",
-        "format-alt": "{ifname}: {ipaddr}/{cidr} <span weight='normal'>爵</span>"
+        "format-alt": "{ifname}: {ipaddr}/{cidr} <span weight='normal'>爵</span>",
+        "interval": 1
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float

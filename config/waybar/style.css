@@ -1,5 +1,5 @@
 @define-color module-bg @window_bg_color;
-@define-color module-bga alpha(@module-bg, 0.9);
+@define-color module-bga alpha(@module-bg, 1);
 @define-color module-fg #ffffff;
 @define-color module-window @module-fg;
 @define-color module-idle_inhibitor @module-fg;
@@ -30,6 +30,7 @@
 window#waybar { /* base window of waybar */
     background-color: rgba(0, 0, 0, 0);
     color: #ffffff;
+    border-radius: 6px;
 }
 
 /* base settings for modules */
@@ -96,16 +97,20 @@ window#waybar { /* base window of waybar */
 }
 
 #workspaces button:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: alpha(@module-fg, 1);
+    color: @module-bg;
 }
 
 #workspaces button.focused {
-    color: #00afff;
-    background-color: rgba(0, 175, 255, 0.2);
+    color: @module-workspaces;
+    /* background-color: rgba(0, 175, 255, 0.2); */
+    background-color: alpha(@module-workspaces, 0.2);
 }
 
 #workspaces button.focused:hover {
-    background-color: rgba(0, 175, 255, 0.4);
+    /* background-color: rgba(0, 175, 255, 0.4); */
+    background-color: alpha(@module-workspaces, 1);
+    color: @module-bg;
 }
 
 #workspaces button.urgent {

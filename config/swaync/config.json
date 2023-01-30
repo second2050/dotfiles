@@ -28,6 +28,11 @@
       "state": "ignored",
       "urgency": "Low",
       "app-name": "Spotify"
+    },
+    "udiskie": {
+      "state": "transient",
+      "urgency": "Low",
+      "app-name": "udiskie"
     }
   },
   "widgets": [

@@ -1,0 +1,10 @@
+program_options:
+  tray: auto
+  menu: flat
+  automount: true
+  notify: true
+
+device_config:
+  # SDCard Reader
+  - device_file: /dev/mmcblk0
+    automount: false

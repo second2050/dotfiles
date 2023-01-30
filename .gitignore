@@ -4,3 +4,6 @@ config/sway/config.d/10_wallpaper.conf
 # Cache Files and Folders
 __pycache__
 __init__.py
+
+# GTK SMB server information
+config/gtk-*/servers

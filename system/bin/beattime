@@ -1,9 +1,11 @@
 #!/usr/bin/env sh
-TZ="UTC" date +"%H %M %S.%N" | awk '{
-    $1 += 1; # Timezone Correction to UTC+1
+# script to output time in .beats/Swatch Internet Time
+# TZ seems to flip UTC+X and UTC-X so BMT/UTC+1 is set as UTC-1
+TZ="UTC-1" date +"%H %M %S.%N" | awk -M '{
+    ROUNDMODE = "D"; # set rounding mode to always round down
     $2 += $1 * 60; # convert hours to minutes and add to minutes
     $3 += $2 * 60; # convert minutes to seconds and add to seconds
     $result = $3 / 86.4; # convert seconds to beats
-    printf "%0.0f\n",$result # print result with maximum of 2 decimal places
+    printf "%03.0f\n",$result # print result with maximum of 2 decimal places
 }'
 

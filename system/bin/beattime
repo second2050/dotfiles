@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+TZ="UTC" date +"%H %M %S.%N" | awk '{
+    $1 += 1; # Timezone Correction to UTC+1
+    $2 += $1 * 60; # convert hours to minutes and add to minutes
+    $3 += $2 * 60; # convert minutes to seconds and add to seconds
+    $result = $3 / 86.4; # convert seconds to beats
+    printf "%0.0f\n",$result # print result with maximum of 2 decimal places
+}'
+

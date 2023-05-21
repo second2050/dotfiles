@@ -33,5 +33,11 @@
         "escape": true,
         "exec": "dsbattery",
         "on-click-right": "dsbattery -d"
+    },
+    "custom/beatclock": {
+        "format": "@{}",
+        "interval" : 0.5,
+        "exec": "beattime",
+        "on-click": "true"
     }
 }

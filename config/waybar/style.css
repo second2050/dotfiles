@@ -35,6 +35,7 @@ window#waybar { /* base window of waybar */
 
 /* base settings for modules */
 #clock,
+#custom-beatclock,
 #battery.charging,
 #cpu,
 #memory,
@@ -117,11 +118,13 @@ window#waybar { /* base window of waybar */
     background-color: #eb4d4b;
 }
 
-#clock {
+#clock,
+#custom-beatclock {
     color: @module-clock;
 }
 
-#clock:hover {
+#clock:hover,
+#custom-beatclock:hover {
     color: @module-bg;
     background-color: @module-clock;
 }

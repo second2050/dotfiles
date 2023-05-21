@@ -6,7 +6,7 @@
     "spacing": 4, // Gaps between modules (4px)
     "margin": "0 4 4 4", // top,right,bottom,left
     // Choose the order of the modules
-    "modules-left": ["custom/nwg-menu", "sway/workspaces", "sway/mode", "wlr/taskbar"],
+    "modules-left": ["custom/nwg-menu", "sway/workspaces", "wlr/workspaces", "sway/mode", "wlr/taskbar"],
     "modules-center": [],
     "modules-right": ["custom/waybar-mpris", "tray", "custom/notification"],
     "include": "$HOME/.config/waybar/custom-modules.json",

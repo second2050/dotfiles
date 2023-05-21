@@ -11,9 +11,8 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 <Multi_key> <t> <f>                          : "(╯°□°）╯︵ ┻━┻"
 <Multi_key> <u> <f>                          : "┬─┬ ノ( ゜-゜ノ)"
 <Multi_key> <Multi_key> <l> <e> <n> <n> <y>  : "( ͡° ͜ʖ ͡°)"
-<Multi_key> <"> <j>                          : "「"
-<Multi_key> <j> <">                          : "」"
-<Multi_key> <space> <space>                  : "‌"
+<Multi_key> <space> <space>                  : "‌"  # Zero-Width Non-Joiner
+<Multi_key> <-> <-> <space>                  : "–" # EN Dash
 
 # Emojis
 <Multi_key> <Multi_key> <e> <y> <e> <s>      : "👀"

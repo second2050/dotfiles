@@ -17,8 +17,8 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 " YouCompleteMe settings
-set completeopt-=preview " disable preview pane at the top
-let g:ycm_add_preview_to_completeopt=0
+" set completeopt-=preview " disable preview pane at the top
+" let g:ycm_add_preview_to_completeopt=0
 " NERDTree settings
 " autocmd VimEnter * NERDTree | wincmd p " Start NERDTree and put the cursor back in the other window.
 

@@ -1,0 +1,28 @@
+// client configuration
+default_layout "compact"
+copy_on_select false
+theme "second2050"
+simplified_ui true
+
+// themes
+themes {
+    second2050 {
+        // this theme is bare bones and just changing colors I want changed
+        // based on the dracula theme found in the documentation of zellij
+        // changed colors
+        fg      "#808080" // inactive tab color
+        green   "#00afff" // accent color
+        magenta "#ff0090" // locked indicator
+        orange  "#ff9500" // mode indicator
+
+        // unchanged colors
+        bg 40 42 54
+        black 0 0 0
+        red 255 85 85
+        yellow 241 250 140
+        blue 98 114 164
+        cyan 139 233 253
+        white 255 255 255
+    }
+}
+

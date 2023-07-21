@@ -1,8 +1,8 @@
 # Override fish config
 #set -g fish_prompt_pwd_dir_length 80
 
-# switch to zellij if connected via ssh
-if set -q SSH_CLIENT && which zellij
+# switch to zellij if connected via ssh and interactive
+if status is-interactive && set -q SSH_CLIENT && which zellij
     set --erase SSH_CLIENT
     set --erase SSH_TTY
     set --erase SSH_CONNECTION

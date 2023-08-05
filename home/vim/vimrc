@@ -23,6 +23,12 @@ set expandtab
 " autocmd VimEnter * NERDTree | wincmd p " Start NERDTree and put the cursor back in the other window.
 
 " keybindings
+" cursor movement
+noremap ; l
+noremap l k
+noremap k j
+noremap j h
+noremap h <Nop>
 " NERDTree
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n>     :NERDTreeMirror<CR>:NERDTreeFocus<CR>

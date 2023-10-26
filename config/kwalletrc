@@ -1,8 +1,21 @@
+[Auto Allow]
+kdewallet=Microsoft Edge,kiod5,kwalletmanager5,ksshaskpass
+
+[Auto Deny]
+kdewallet=
+
 [Wallet]
-First Use=false
 Close When Idle=false
 Close on Screensaver=false
+Default Wallet=kdewallet
+Enabled=true
+First Use=false
+Idle Timeout=10
+Launch Manager=false
+Leave Manager Open=false
+Leave Open=true
+Prompt on Open=false
+Use One Wallet=true
 
 [org.freedesktop.secrets]
 apiEnabled=true
-

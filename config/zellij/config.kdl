@@ -1,8 +1,8 @@
 // client configuration
-default_layout "compact"
+//default_layout "custom_compact"
 copy_on_select false
 theme "second2050"
-simplified_ui true
+simplified_ui false
 
 // themes
 themes {

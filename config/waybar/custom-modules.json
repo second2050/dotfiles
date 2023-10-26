@@ -36,7 +36,7 @@
     },
     "custom/beatclock": {
         "format": "@{}",
-        "interval" : 0.5,
+        "interval" : 1,
         "exec": "beattime",
         "on-click": "true"
     }

@@ -1,12 +1,19 @@
+# application settings
+#daemonize
+#fade-in=3
+
 # background
 #image="$HOME/Pictures/Isekaijoucho - Negai.png"
 #screenshot
-scaling=fill
-color=0000003f
-effect-scale=0.5
-effect-blur=5x3
-fade-in=3
-daemonize
+#scaling=fill
+#color=00000000
+#effect-scale=0.5
+#effect-blur=5x3
+#effect-scale=2
+
+# overlay
+#effect-compose=/home/second2050/.config/swaylock/border
+#effect-compose=/home/second2050/.config/swaylock/overlay
 
 # clock
 clock

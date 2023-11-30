@@ -1,8 +1,13 @@
 // client configuration
-//default_layout "custom_compact"
 copy_on_select false
 theme "second2050"
 simplified_ui false
+session_serialization false
+ui {
+    pane_frames {
+        rounded_corners true
+    }
+}
 
 // themes
 themes {

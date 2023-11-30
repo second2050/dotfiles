@@ -29,11 +29,11 @@ layout {
             mode_tmux          "#[fg=#ff9500,bg=0]{name}"
 
 
-            tab_normal   "#[fg=0]#[fg=8,bg=0,bold]{name}#[fg=0]"
-            tab_active   "#[fg=#00afff]#[fg=#000000,bg=#00afff,bold]{name}#[fg=#00afff]"
+            tab_normal   "#[fg=0]#[fg=8,bg=0,bold]{name}#[fg=0] "
+            tab_active   "#[fg=#00afff]#[fg=#000000,bg=#00afff,bold]{name}#[fg=#00afff] "
 
             datetime        "#[fg=8,bg=0,bold]{format}"
-            datetime_format "%Y-%m-%d %H:%M:%S"
+            datetime_format "%Y-%m-%d %H:%M:%S 󰥔"
             datetime_timezone "Europe/Berlin"
         }
     }

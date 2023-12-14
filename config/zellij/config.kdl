@@ -55,10 +55,10 @@ keybinds {
         bind "g" { SwitchToMode "Normal"; }
         bind "q" { Quit; }
         bind "n" { NewPane; }
-        bind "h" "Alt Left" { MoveFocusOrTab "Left"; }
-        bind "l" "Alt Right" { MoveFocusOrTab "Right"; }
-        bind "j" "Alt Down" { MoveFocus "Down"; }
-        bind "k" "Alt Up" { MoveFocus "Up"; }
+        bind "Left" { MoveFocusOrTab "Left"; }
+        bind "Right" { MoveFocusOrTab "Right"; }
+        bind "Down" { MoveFocus "Down"; }
+        bind "Up" { MoveFocus "Up"; }
         bind "=" "Alt +" { Resize "Increase"; }
         bind "-" { Resize "Decrease"; }
         bind "[" { PreviousSwapLayout; }

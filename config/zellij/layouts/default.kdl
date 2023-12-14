@@ -13,8 +13,8 @@ layout {
 
             hide_frame_for_single_pane "false"
 
-            mode_normal        "#[fg=#00afff,bg=0]{name}"
-            mode_locked        "#[fg=#ff0090,bg=0]󰌾"
+            mode_normal        "#[fg=#00afff,bg=0]Insert"
+            mode_locked        "#[fg=#ff0090,bg=0]Normal"
             mode_resize        "#[fg=#ff9500,bg=0]{name}"
             mode_pane          "#[fg=#ff9500,bg=0]{name}"
             mode_tab           "#[fg=#ff9500,bg=0]{name}"

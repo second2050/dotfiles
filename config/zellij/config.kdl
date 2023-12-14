@@ -31,3 +31,61 @@ themes {
     }
 }
 
+keybinds {
+    // `locked` is used as command/normal mode
+    // meanwhile `normal` is used as insert/locked mode
+    normal clear-defaults=true {
+        bind "Ctrl g" { SwitchToMode "Locked"; }
+        bind "Ctrl b" { SwitchToMode "Tmux"; }
+    }
+    locked {
+        bind "Enter" "Esc" { SwitchToMode "Normal"; }
+        bind "Ctrl g" {
+            Write 7; // 7 = ^G
+            SwitchToMode "Normal";
+        }
+        bind "p" { SwitchToMode "Pane"; }
+        bind "n" { SwitchToMode "Resize"; }
+        bind "s" { SwitchToMode "Scroll"; }
+        bind "o" { SwitchToMode "Session"; }
+        bind "t" { SwitchToMode "Tab"; }
+        bind "h" { SwitchToMode "Move"; }
+        bind "b" { SwitchToMode "Tmux"; }
+
+        bind "g" { SwitchToMode "Normal"; }
+        bind "q" { Quit; }
+        bind "n" { NewPane; }
+        bind "h" "Alt Left" { MoveFocusOrTab "Left"; }
+        bind "l" "Alt Right" { MoveFocusOrTab "Right"; }
+        bind "j" "Alt Down" { MoveFocus "Down"; }
+        bind "k" "Alt Up" { MoveFocus "Up"; }
+        bind "=" "Alt +" { Resize "Increase"; }
+        bind "-" { Resize "Decrease"; }
+        bind "[" { PreviousSwapLayout; }
+        bind "]" { NextSwapLayout; }
+    }
+    shared_except "normal" {
+        bind "Enter" "Esc" { SwitchToMode "Normal"; }
+    }
+    shared_except "pane" "normal" {
+        bind "Ctrl p" { SwitchToMode "Pane"; }
+    }
+    shared_except "resize" "normal" {
+        bind "Ctrl n" { SwitchToMode "Resize"; }
+    }
+    shared_except "scroll" "normal" {
+        bind "Ctrl s" { SwitchToMode "Scroll"; }
+    }
+    shared_except "session" "normal" {
+        bind "Ctrl o" { SwitchToMode "Session"; }
+    }
+    shared_except "tab" "normal" {
+        bind "Ctrl t" { SwitchToMode "Tab"; }
+    }
+    shared_except "move" "normal" {
+        bind "Ctrl h" { SwitchToMode "Move"; }
+    }
+    shared_except "tmux" "normal" {
+        bind "Ctrl b" { SwitchToMode "Tmux"; }
+    }
+}

@@ -2,7 +2,7 @@ layout {
     pane
     pane size=1 borderless=true {
         plugin location="file:zjstatus.wasm" {
-            format_left  "#[fg=0]{mode}#[fg=8,bg=0]#[fg=7,bg=0,bold]{session}#[fg=0] {tabs}"
+            format_left  "{mode}#[fg=7,bg=0,bold]{session}#[fg=0] {tabs}"
             format_right "#[fg=0]{datetime}#[fg=0]"
             format_space ""
 
@@ -13,20 +13,20 @@ layout {
 
             hide_frame_for_single_pane "false"
 
-            mode_normal        "#[fg=#00afff,bg=0]Insert"
-            mode_locked        "#[fg=#ff0090,bg=0]Normal"
-            mode_resize        "#[fg=#ff9500,bg=0]{name}"
-            mode_pane          "#[fg=#ff9500,bg=0]{name}"
-            mode_tab           "#[fg=#ff9500,bg=0]{name}"
-            mode_scroll        "#[fg=#ff9500,bg=0]{name}"
-            mode_enter_search  "#[fg=#ff9500,bg=0]{name}"
-            mode_search        "#[fg=#ff9500,bg=0]{name}"
-            mode_rename_tab    "#[fg=#ff9500,bg=0]{name}"
-            mode_rename_pane   "#[fg=#ff9500,bg=0]{name}"
-            mode_session       "#[fg=#ff9500,bg=0]{name}"
-            mode_move          "#[fg=#ff9500,bg=0]{name}"
-            mode_prompt        "#[fg=#ff9500,bg=0]{name}"
-            mode_tmux          "#[fg=#ff9500,bg=0]{name}"
+            mode_normal        "#[fg=0]#[fg=#00afff,bg=0]Insert#[fg=8,bg=0]"
+            mode_locked        "#[fg=#00afff]#[fg=0,bg=#00afff]Normal#[fg=#00afff,bg=0]"
+            mode_resize        "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
+            mode_pane          "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
+            mode_tab           "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
+            mode_scroll        "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
+            mode_enter_search  "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
+            mode_search        "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
+            mode_rename_tab    "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
+            mode_rename_pane   "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
+            mode_session       "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
+            mode_move          "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
+            mode_prompt        "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
+            mode_tmux          "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
 
 
             tab_normal   "#[fg=0]#[fg=8,bg=0,bold]{name}#[fg=0] "

@@ -39,20 +39,30 @@ keybinds {
         bind "Ctrl b" { SwitchToMode "Tmux"; }
     }
     locked {
+        // noop keys to prevent write trough
+        // r"String" are literal strings with no parsed escape sequences
+        // r#"String"# are literal strings with no parsed escape sequences, which can also include `#` and `"` characters
+        //     (the number of `#` characters used to start must be the same as the number of `#` characters used to end)
+        bind "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z" \
+             "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" \
+             "1" "2" "3" "4" "5" "6" "7" "8" "9" "0" \ 
+             r"," r"." r"/" r"\" r"`" r#"#"# \
+             r"|" r"<" r">" r"?" r"¬" r"_" r"+" r"!" r#"""# r"£" r"$" r"%" r"^" r"&" r"*" r"(" r")" r"_" r"+" r"{" r"}" r":" r"@" r"~" \
+             {} 
+
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
-        bind "Ctrl g" {
+        bind "Ctrl g" "g" {
             Write 7; // 7 = ^G
             SwitchToMode "Normal";
         }
         bind "p" { SwitchToMode "Pane"; }
-        bind "n" { SwitchToMode "Resize"; }
+        bind "r" { SwitchToMode "Resize"; }
         bind "s" { SwitchToMode "Scroll"; }
         bind "o" { SwitchToMode "Session"; }
         bind "t" { SwitchToMode "Tab"; }
         bind "h" { SwitchToMode "Move"; }
         bind "b" { SwitchToMode "Tmux"; }
 
-        bind "g" { SwitchToMode "Normal"; }
         bind "q" { Quit; }
         bind "n" { NewPane; }
         bind "Left" { MoveFocusOrTab "Left"; }

@@ -3,6 +3,12 @@ if status is-interactive && set -q SSH_CLIENT && which zellij
     set --erase SSH_CLIENT
     set --erase SSH_TTY
     set --erase SSH_CONNECTION
+    # if agent forwarding is in use, symlink the SSH_AGENT_SOCK on connection
+    # to a known location which can be updated to a new socket on reconnection
+    if set -q SSH_AUTH_SOCK
+        ln -sf $SSH_AUTH_SOCK $HOME/.ssh/agent.sock
+        set SSH_AUTH_SOCK "$HOME/.ssh/agent.sock"
+    end
     exec zellij attach --create
 end
 
@@ -20,6 +26,11 @@ if which starship &> /dev/null
     enable_transience
 else
     echo ":: [starship] not available, falling back to simple prompt"
+end
+
+# include direnv if available
+if which direnv &> /dev/null
+    direnv hook fish | source
 end
 
 # show short system overview when recording with asciinema (if neofetch is available)

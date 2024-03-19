@@ -55,6 +55,8 @@ keybinds {
             Write 7; // 7 = ^G
             SwitchToMode "Normal";
         }
+
+        // Mode switches
         bind "p" { SwitchToMode "Pane"; }
         bind "r" { SwitchToMode "Resize"; }
         bind "s" { SwitchToMode "Scroll"; }
@@ -63,8 +65,10 @@ keybinds {
         bind "h" { SwitchToMode "Move"; }
         bind "b" { SwitchToMode "Tmux"; }
 
+        // Direct actions
         bind "q" { Quit; }
         bind "n" { NewPane; }
+        bind "x" { CloseFocus; }
         bind "Left" { MoveFocusOrTab "Left"; }
         bind "Right" { MoveFocusOrTab "Right"; }
         bind "Down" { MoveFocus "Down"; }

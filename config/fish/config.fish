@@ -19,10 +19,15 @@ bind \e\[3\;5~ kill-word    # Kill right Word with CTRL+DELETE
 # Variables
 export SHELL=(which fish)
 export EDITOR=(which vim 2> /dev/null)
+set FISH_FUNCTION_DIR "$XDG_CONFIG_HOME/fish/functions"
 
 # Load Starship Prompt if available
 if which starship &> /dev/null
     starship init fish | source
+    # overwrite starship's right prompt if available
+    if test -e "$FISH_FUNCTION_DIR/fish_right_prompt.fish"
+        source "$FISH_FUNCTION_DIR/fish_right_prompt.fish"
+    end
     enable_transience
 else
     echo ":: [starship] not available, falling back to simple prompt"

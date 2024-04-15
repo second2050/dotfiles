@@ -15,6 +15,8 @@ end
 # Keybindings (Konsole/Yakuake)
 bind \ch backward-kill-word # Kill left Word with CTRL+BACKSPACE
 bind \e\[3\;5~ kill-word    # Kill right Word with CTRL+DELETE
+bind \eOM insert-line-under # New line with SHIFT+ENTER
+bind \ei __sekii_show_git_status
 
 # Variables
 export SHELL=(which fish)

@@ -1,4 +1,4 @@
-if which trash &> /dev/null
+if command --query trash
 	function rm --wraps trash;
 		/usr/bin/trash $argv;
 	end

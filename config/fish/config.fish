@@ -1,5 +1,5 @@
 # switch to zellij if connected via ssh and interactive
-if status is-interactive && set -q SSH_CLIENT && which zellij
+if status is-interactive && set -q SSH_CLIENT && command --query zellij
     set --erase SSH_CLIENT
     set --erase SSH_TTY
     set --erase SSH_CONNECTION
@@ -19,12 +19,12 @@ bind \eOM insert-line-under # New line with SHIFT+ENTER
 bind \ei __sekii_show_git_status
 
 # Variables
-export SHELL=(which fish)
-export EDITOR=(which vim 2> /dev/null)
+set --export SHELL (command --search fish)
+set --export EDITOR (command --search vim)
 set FISH_FUNCTION_DIR "$XDG_CONFIG_HOME/fish/functions"
 
 # Load Starship Prompt if available
-if which starship &> /dev/null
+if command --query starship
     starship init fish | source
     # overwrite starship's right prompt if available
     if test -e "$FISH_FUNCTION_DIR/fish_right_prompt.fish"
@@ -36,12 +36,12 @@ else
 end
 
 # include direnv if available
-if which direnv &> /dev/null
+if command --query direnv
     direnv hook fish | source
 end
 
 # show short system overview when recording with asciinema (if neofetch is available)
-if set -q ASCIINEMA_REC && test "$ASCIINEMA_REC" -eq 1 && which neofetch &> /dev/null
+if set -q ASCIINEMA_REC && test "$ASCIINEMA_REC" -eq 1 && command --query neofetch
     neofetch --no_config --ascii_distro arch_small \
         --disable term theme icons cpu gpu memory packages wm de \
                   wm_theme uptime model resolution cols

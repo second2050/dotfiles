@@ -1,6 +1,6 @@
 function fish_greeting
     if not set -q fish_greeting
-        if which pokemon-colorscripts &> /dev/null && tty | ! grep tty > /dev/null
+        if command --query pokemon-colorscripts && tty | ! grep tty > /dev/null
             pokemon-colorscripts --no-title --random 1-5
         else
             set -l line (_ 'Welcome to °<><, the friendly interactive shell')

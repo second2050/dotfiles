@@ -1,5 +1,4 @@
 return {
-    "folke/lazy.nvim", -- Allow selfupdating of Lazy
     "nvim-lua/plenary.nvim",
     -- Colorscheme
     "tanvirtin/monokai.nvim",

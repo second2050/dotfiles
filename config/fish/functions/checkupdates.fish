@@ -14,7 +14,7 @@ function checkupdates
     # output pending updates list
     begin
         echo -e "\033[1m\033[34m::\033[39m $(cat /tmp/chkupd_tmprslt | wc -l) updates pending..."
-        cat /tmp/chkupd_tmprslt | awk '{ print "\033[1m" $1 "\033[0m \033[90m" $2 "\033[0m \033[90m" "\033[1m→" "\033[0m \033[90m" $4 "\033[0m" }'
+        cat /tmp/chkupd_tmprslt | awk '{ print "\033[1m" $1 "\033[0m \033[90m" $2 "\033[0m \033[90m" "\033[1m->" "\033[0m \033[90m" $4 "\033[0m" }'
     end | less --quit-if-one-screen --raw-control-chars
 end
 

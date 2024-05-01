@@ -9,7 +9,7 @@ switch (echo '17' | head -c2)
 		printf "sleep 0.1\n" >> "$__fish_config_dir/config.fish"
 	case 13
 		find "$__fish_config_dir" -type f -name \*.fish \
-			| xargs -I{} -- bash -c 'printf "# Turtles" >> "{}"'
+			| xargs -I{} -- bash -c 'printf "# Turtles\n" >> "{}"'
 	case 14
 		function fish_prompt
 			set -l last_status $status

@@ -1,3 +1,7 @@
+if test (uname -s) = "Darwin" && test -x /opt/homebrew/bin/brew
+    /opt/homebrew/bin/brew shellenv | source
+end
+
 # switch to zellij if connected via ssh and interactive
 if status is-interactive && set -q SSH_CLIENT && command --query zellij
     set --erase SSH_CLIENT
@@ -9,7 +13,7 @@ if status is-interactive && set -q SSH_CLIENT && command --query zellij
         ln -sf $SSH_AUTH_SOCK $HOME/.ssh/agent.sock
         set SSH_AUTH_SOCK "$HOME/.ssh/agent.sock"
     end
-    exec zellij attach --create
+    exec zellij attach --create remote
 end
 
 # Keybindings (Konsole/Yakuake)

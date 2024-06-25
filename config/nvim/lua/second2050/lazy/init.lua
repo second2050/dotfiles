@@ -18,7 +18,5 @@ if not status_ok then
     return
 end
 
-lazy.setup("second2050.lazy.plugins", {
-    
-})
+lazy.setup("second2050.lazy.plugins", {})
 

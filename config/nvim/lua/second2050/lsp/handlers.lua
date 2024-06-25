@@ -71,6 +71,9 @@ end
 
 M.on_attach = function(client, bufnr)
     lsp_keymaps(bufnr)
+    if client.server_capabilities.inlayHintProvider then
+        vim.lsp.inlay_hint.enable(true, nil, bufnr)
+    end
 end
 
 M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)

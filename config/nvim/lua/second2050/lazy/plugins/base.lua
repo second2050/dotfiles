@@ -281,4 +281,12 @@ return {
     },
     { "echasnovski/mini.starter",  version = false, opts = {} },
     { "echasnovski/mini.sessions", version = false, opts = {} },
+    {
+        "MysticalDevil/inlay-hints.nvim",
+        event = "LspAttach",
+        dependencies = { "neovim/nvim-lspconfig" },
+        config = function()
+            require("inlay-hints").setup()
+        end
+    }
 }

@@ -53,6 +53,7 @@ wk.register({
         f = { "<cmd>Telescope find_files<cr>", "Find File" },
         b = { "<cmd>Telescope buffers<cr>", "Search Buffers" },
         l = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
-    }
+    },
+    h = { "<cmd>noh<cr>", "Dismiss Highlights" }
 }, wk_opts)
 

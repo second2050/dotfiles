@@ -1,4 +1,4 @@
-switch (echo '17' | head -c2)
+switch (date | md5sum | head -c2)
 	case 10
 		if command --query sl; function ls; command sl -lGw; end; end
 	case 11

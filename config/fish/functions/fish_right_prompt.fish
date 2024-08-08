@@ -6,6 +6,9 @@ function fish_right_prompt
     # if starship is not loaded clear right prompt for transience
     else if set -q TRANSIENT && test "$TRANSIENT" -eq 1
         echo ""
+    # show incognito indicator in private mode
+    else if set -q fish_private_mode
+        echo -e "\e[90m(󰗹)\e[0m"
     # show mommy in other cases if available
     else if command -q mommy && ! set -q ASCIINEMA_REC
         mommy -1 -s $cmd_status 2> /dev/null

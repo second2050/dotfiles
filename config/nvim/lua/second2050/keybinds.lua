@@ -1,11 +1,5 @@
 local opts = { noremap = true, silent = true }
 local wk = require("which-key")
-local wk_opts = {
-    mode = "n",
-    prefix = "<leader>",
-    noremap = true,
-    silent = true
-}
 local keymap = vim.api.nvim_set_keymap
 
 -- Leader Key
@@ -47,13 +41,11 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- NeoTree
 keymap("n", "<C-n>", ":Neotree toggle<cr>", opts)
 
-wk.register({
-    f = {
-        name = "Find",
-        f = { "<cmd>Telescope find_files<cr>", "Find File" },
-        b = { "<cmd>Telescope buffers<cr>", "Search Buffers" },
-        l = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
-    },
-    h = { "<cmd>noh<cr>", "Dismiss Highlights" }
-}, wk_opts)
+wk.add({
+    { "<leader>f", group = "Find", remap = false },
+    { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Search Buffers", remap = false },
+    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", remap = false },
+    { "<leader>fl", "<cmd>Telescope live_grep<cr>", desc = "Live Grep", remap = false },
+    { "<leader>h", "<cmd>noh<cr>", desc = "Dismiss Highlights", remap = false },
+})
 

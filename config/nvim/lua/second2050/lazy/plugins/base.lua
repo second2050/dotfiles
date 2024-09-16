@@ -288,5 +288,6 @@ return {
         config = function()
             require("inlay-hints").setup()
         end
-    }
+    },
+    { "https://github.com/imsnif/kdl.vim" }
 }

@@ -2,61 +2,60 @@ local M = {}
 
 local function lsp_keymaps(bufnr)
     local wk = require("which-key")
-    local wk_opts = {
-        mode = "n",
-        prefix = "g",
-        noremap = true,
-        silent = true,
-        buffer = bufnr
-    }
 
-    wk.register({
-        d = { "<cmd>Telescope lsp_definitions<CR>", "Definition" },
-        D = { "<cmd>Lspsaga finder<CR>", "LSP finder" },
-        i = { "<cmd>Telescope lsp_implementations<CR>", "Implementation" },
-        r = { "<cmd>Telescope lsp_references<CR>", "References" },
-        s = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols" },
-        S = { "<cmd>Telescope lsp_workspace_symbols<CR>", "Workspace Symbols" },
-    }, wk_opts)
+    wk.add({
+        { "gD", "<cmd>Lspsaga finder<CR>",                  desc = "LSP finder",        remap = false },
+        { "gS", "<cmd>Telescope lsp_workspace_symbols<CR>", desc = "Workspace Symbols", remap = false },
+        { "gd", "<cmd>Telescope lsp_definitions<CR>",       desc = "Definition",        remap = false },
+        { "gi", "<cmd>Telescope lsp_implementations<CR>",   desc = "Implementation",    remap = false },
+        { "gr", "<cmd>Telescope lsp_references<CR>",        desc = "References",        remap = false },
+        { "gs", "<cmd>Telescope lsp_document_symbols<CR>",  desc = "Document Symbols",  remap = false },
+    })
 
-    wk_opts.prefix = "<leader>l"
-    wk.register({
-        name = "Language Server",
-        a = { "<cmd>lua require('actions-preview').code_actions()<CR>", "Code Action" },
-        d = { "<cmd>Lspsaga show_cursor_diagnostics<cr>", "Show Cursor Diagnostic" },
-        e = { "<Plug>(doge-generate)", "Generate Documentation" },
-        f = {
-            function()
-                vim.lsp.buf.format()
-            end,
-            "Format File",
-        },
-        c = {
+    wk.add({
+        { "<leader>l",  group = "Language Server",                                remap = false },
+        { "<leader>la", "<cmd>lua require('actions-preview').code_actions()<CR>", desc = "Code Action", remap = false },
+        {
+            "<leader>lc",
             function()
                 vim.lsp.codelens.run()
             end,
-            "Run Code Lens",
+            desc = "Run Code Lens",
+            remap = false
         },
-        h = {
+        { "<leader>ld", "<cmd>Lspsaga show_cursor_diagnostics<cr>", desc = "Show Cursor Diagnostic", remap = false },
+        { "<leader>le", "<Plug>(doge-generate)",                    desc = "Generate Documentation", remap = false },
+        {
+            "<leader>lf",
+            function()
+                vim.lsp.buf.format()
+            end,
+            desc = "Format File",
+            remap = false
+        },
+        {
+            "<leader>lh",
             function()
                 vim.lsp.buf.hover()
             end,
-            "Hover",
+            desc = "Hover",
+            remap = false
         },
-        r = { "<cmd>Lspsaga rename<cr>", "Rename" },
-        s = {
+        { "<leader>lr", "<cmd>Lspsaga rename<cr>", desc = "Rename", remap = false },
+        {
+            "<leader>ls",
             function()
                 vim.lsp.buf.signature_help()
             end,
-            "Signature Help",
+            desc = "Signature Help",
+            remap = false
         },
-    }, wk_opts)
+    })
 
-    wk_opts.prefix = ""
-    wk.register({
-        ["[d"] = { "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Previous Diagnostic" },
-        ["]d"] = { "<cmd>Lspsaga diagnostic_jump_next<cr>", "Next Diagnostic" },
-    }, wk_opts)
+    wk.add({
+        { "[d", "<cmd>Lspsaga diagnostic_jump_prev<cr>", desc = "Previous Diagnostic", remap = false },
+        { "]d", "<cmd>Lspsaga diagnostic_jump_next<cr>", desc = "Next Diagnostic",     remap = false },
+    })
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

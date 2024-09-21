@@ -21,6 +21,9 @@ bind \ch backward-kill-word # Kill left Word with CTRL+BACKSPACE
 bind \e\[3\;5~ kill-word    # Kill right Word with CTRL+DELETE
 bind \eOM insert-line-under # New line with SHIFT+ENTER
 bind \ei __sekii_show_git_status
+if command --query run0 # use run0 if it is available
+    bind \es "fish_commandline_prepend run0"
+end
 
 # Variables
 set --export SHELL (command --search fish)

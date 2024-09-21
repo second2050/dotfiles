@@ -1,0 +1,21 @@
+fn + cmd - h : yabai -m window --focus west
+fn + cmd - j : yabai -m window --focus south
+fn + cmd - k : yabai -m window --focus north
+fn + cmd - l : yabai -m window --focus east
+
+fn - 0x18 : yabai -m window --ratio rel:+0.02
+fn - 0x1B : yabai -m window --ratio rel:-0.02
+fn - 0    : yabai -m space --equalize
+
+fn + cmd + alt - h : yabai -m window --swap west
+fn + cmd + alt - j : yabai -m window --swap south
+fn + cmd + alt - k : yabai -m window --swap north
+fn + cmd + alt - l : yabai -m window --swap east
+
+fn - space : yabai -m window --toggle float
+
+fn - 0x21 : yabai -m space --rotate 90
+fn - 0x1E : yabai -m space --rotate 270
+
+fn - f : yabai -m window --toggle native-fullscreen
+

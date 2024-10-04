@@ -58,3 +58,5 @@ if set -q ASCIINEMA_REC && test "$ASCIINEMA_REC" -eq 1 && command --query neofet
                   wm_theme uptime model resolution cols
 end
 
+set SHELL_GAMBLE "$XDG_CONFIG_HOME/fish/shell-gamble.fish"
+if test -e $SHELL_GAMBLE; source $SHELL_GAMBLE; end

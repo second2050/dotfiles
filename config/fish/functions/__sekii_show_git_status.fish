@@ -7,7 +7,7 @@ function __sekii_show_git_status
                 git worktree list | awk '{print "   " $0}'
                 echo ""
             end
-            echo -e "\033[1m\033[34m::\033[39m Worktree status" [(pwd)] "\033[0m"
+            echo -e "\033[1m\033[34m::\033[39m Worktree status" [(git rev-parse --show-toplevel)] "\033[0m"
             git -c color.ui=always status | awk '{print "   " $0}'
             echo -e "\n\033[1m\033[34m::\033[39m Commit log\033[0m"
 

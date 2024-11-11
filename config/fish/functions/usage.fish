@@ -7,3 +7,4 @@ function usage --wraps="du --summarize --human-readable" --description 'Shows si
         $cmd (pwd)
     end
 end
+

@@ -1,10 +1,10 @@
 function fish_right_prompt
     set cmd_status $status
     # show time of command execution if starship is loaded
-    if set -q TRANSIENT && test "$TRANSIENT" -eq 1 && set -q STARSHIP_SHELL
+    if set -q TRANSIENT && test "$RIGHT_TRANSIENT" -eq 1 && set -q STARSHIP_SHELL
         starship module time
     # if starship is not loaded clear right prompt for transience
-    else if set -q TRANSIENT && test "$TRANSIENT" -eq 1
+    else if set -q TRANSIENT && test "$RIGHT_TRANSIENT" -eq 1
         echo ""
     # show incognito indicator in private mode
     else if set -q fish_private_mode

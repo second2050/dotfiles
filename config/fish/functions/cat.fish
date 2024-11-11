@@ -3,3 +3,4 @@ if command --query bat
         bat $argv   
     end
 end
+

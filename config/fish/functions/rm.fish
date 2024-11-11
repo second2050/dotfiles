@@ -4,6 +4,8 @@ if command --query trash
 	end
 else
     function rm --wraps rm;
-        command rm --interactive=always $argv
+        # using short switch because bsd rm does not support long switches.
+        command rm -i $argv
     end
 end
+

@@ -39,3 +39,4 @@ function man --wraps man
     end
     command man $argv
 end
+

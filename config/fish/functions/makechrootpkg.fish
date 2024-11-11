@@ -3,3 +3,4 @@ if command --query makechrootpkg
         command makechrootpkg -r /var/lib/aurbuild/$(uname -m) -u $argv
     end
 end
+

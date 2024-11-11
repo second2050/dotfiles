@@ -9,3 +9,4 @@ if command --query lsd
         lsd --tree $argv
     end
 end
+

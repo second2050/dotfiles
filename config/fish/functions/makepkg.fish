@@ -3,3 +3,4 @@ if command --query makepkg
         command makepkg --log $argv
     end
 end
+

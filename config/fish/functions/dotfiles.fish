@@ -76,3 +76,4 @@ function dotfiles --description="manage the dotfile repo"
 
 	end
 end
+

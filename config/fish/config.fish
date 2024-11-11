@@ -34,6 +34,11 @@ if not set -q XDG_DATA_HOME; set --export XDG_DATA_HOME "$HOME/.local/share"; en
 if not set -q XDG_STATE_HOME; set --export XDG_STATE_HOME "$HOME/.local/state"; end
 set FISH_FUNCTION_DIR "$__fish_config_dir/functions"
 
+# Source additional config files from conf.d
+for file in (ls "$__fish_config_dir/conf.d")
+    source "$__fish_config_dir/conf.d/$file"
+end
+
 # Load Starship Prompt if available
 if command --query starship
     starship init fish | source

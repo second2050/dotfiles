@@ -1,5 +1,6 @@
-if test (uname -s) = "Darwin" && test -x /opt/homebrew/bin/brew
-    /opt/homebrew/bin/brew shellenv | source
+# load OS specific configuration
+if test -x "$__fish_config_dir"/config.(uname -s).fish
+    source "$__fish_config_dir"/config.(uname -s).fish
 end
 
 # switch to zellij if connected via ssh and interactive
@@ -37,29 +38,5 @@ set FISH_FUNCTION_DIR "$__fish_config_dir/functions"
 # Source additional config files from conf.d
 for file in (ls "$__fish_config_dir/conf.d")
     source "$__fish_config_dir/conf.d/$file"
-end
-
-# Load Starship Prompt if available
-if command --query starship
-    starship init fish | source
-    # overwrite starship's right prompt if available
-    if test -e "$FISH_FUNCTION_DIR/fish_right_prompt.fish"
-        source "$FISH_FUNCTION_DIR/fish_right_prompt.fish"
-    end
-    enable_transience
-else
-    echo ":: [starship] not available, falling back to simple prompt"
-end
-
-# include direnv if available
-if command --query direnv
-    direnv hook fish | source
-end
-
-# show short system overview when recording with asciinema (if neofetch is available)
-if set -q ASCIINEMA_REC && test "$ASCIINEMA_REC" -eq 1 && command --query neofetch
-    neofetch --no_config --ascii_distro arch_small \
-        --disable term theme icons cpu gpu memory packages wm de \
-                  wm_theme uptime model resolution cols
 end
 

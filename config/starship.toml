@@ -1,7 +1,7 @@
 # prompt
 format = """
-$username$hostname $directory$git_branch$git_commit$git_state$git_status$jobs$cmd_duration
-${custom.asciinema}$shell$character"""
+$username$hostname $directory$git_branch$git_commit$git_state$git_status$git_metrics$jobs$cmd_duration
+${custom.asciinema}$nix_shell$shell$character"""
 
 [character]
 success_symbol = ""
@@ -31,6 +31,9 @@ format = "[$symbol](bold red)$branch"
 format = " [$all_status$ahead_behind]($style) "
 untracked = ""
 
+[git_metrics]
+disabled = false
+
 [shell]
 format = "$indicator" # eliminate forced space
 disabled = false # not enabled by default ö.ö
@@ -47,9 +50,19 @@ unknown_indicator = "?? "
 
 [time]
 disabled=false
+format = ' [$time]($style) '
 
 [jobs]
 symbol = '󰫢'
+
+[nix_shell]
+disabled = false
+heuristic = true
+format = '[$symbol$state( \($name\))]($style) '
+symbol = ''
+impure_msg = '!'
+pure_msg = '󰄬'
+unknown_msg = ''
 
 [custom.asciinema]
 command='tput blink; echo "REC "'

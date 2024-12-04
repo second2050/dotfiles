@@ -40,3 +40,5 @@ for file in (ls "$__fish_config_dir/conf.d")
     source "$__fish_config_dir/conf.d/$file"
 end
 
+set SHELL_GAMBLE "$XDG_CONFIG_HOME/fish/shell-gamble.fish"
+if test -e $SHELL_GAMBLE; source $SHELL_GAMBLE; end

@@ -1,5 +1,5 @@
-# skip if tput is unavailable
-if not command --query tput
+# skip if tput is unavailable or not interactive
+if not command --query tput || not status is-interactive
     return
 end
 

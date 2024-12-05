@@ -1,4 +1,8 @@
-# Load Starship Prompt if available
+# Load Starship Prompt if available and interactive
+if not status is-interactive
+    return
+end
+
 if command --query starship
     starship init fish | source
     # overwrite starship's right prompt if available

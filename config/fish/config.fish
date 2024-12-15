@@ -22,3 +22,5 @@ if command --query run0 # use run0 if it is available
     bind alt-c "fish_commandline_prepend command"
 end
 
+set SHELL_GAMBLE "$XDG_CONFIG_HOME/fish/shell-gamble.fish"
+if test -e $SHELL_GAMBLE; source $SHELL_GAMBLE; end

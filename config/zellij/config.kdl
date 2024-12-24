@@ -11,15 +11,27 @@ ui {
 }
 
 plugins {
-    tab-bar location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm" {
+    tab-bar location="https://github.com/dj95/zjstatus/releases/download/v0.19.1/zjstatus.wasm" {
+        color_orange "#f4a331"
+        color_blue "#2fd0ef"
+
         format_left  "#[fg=0]#[fg=7,bg=0]Zellij#[fg=8,bg=0]#[fg=7,bg=0,bold]{session}#[fg=0] {tabs}"
         tab_normal   "#[fg=0]#[fg=8,bg=0,bold]{name}#[fg=0] "
-        tab_active   "#[fg=#00afff]#[fg=#000000,bg=#00afff,bold]{name}#[fg=#00afff] "
+        tab_active   "#[fg=$blue]#[fg=#000000,bg=$blue,bold]{name}#[fg=$blue] "
     }
-    compact-bar location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm" {
-        format_left  "{mode}#[fg=7,bg=0,bold]{session}#[fg=0] {tabs}"
-        format_right "#[fg=0]{datetime}#[fg=0]"
+    compact-bar location="https://github.com/dj95/zjstatus/releases/download/v0.19.1/zjstatus.wasm" {
+        color_orange "#f4a331"
+        color_blue "#2fd0ef"
+
+        format_left  "{mode}#[fg=7,bg=0,bold]{session}#[fg=0]"
+        format_center "{tabs}"
+        format_right "#[fg=0]{notifications}{datetime}#[fg=0]"
         format_space ""
+        format_precedence "lrc"
+        format_hide_on_overlength "true"
+
+        notification_format_unread           "#[fg=7,bg=0]{message} #[fg=7,bg=0,blink] "
+        notification_show_interval           "10"
 
         border_enabled  "false"
         border_char     "─"
@@ -28,28 +40,41 @@ plugins {
 
         hide_frame_for_single_pane "false"
 
-        mode_normal        "#[fg=0]#[fg=#00afff,bg=0]Insert#[fg=8,bg=0]"
-        mode_locked        "#[fg=#00afff]#[fg=0,bg=#00afff]Normal#[fg=#00afff,bg=0]"
-        mode_resize        "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
-        mode_pane          "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
-        mode_tab           "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
-        mode_scroll        "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
-        mode_enter_search  "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
-        mode_search        "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
-        mode_rename_tab    "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
-        mode_rename_pane   "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
-        mode_session       "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
-        mode_move          "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
-        mode_prompt        "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
-        mode_tmux          "#[fg=#ff9500]#[fg=0,bg=#ff9500]{name}#[fg=#ff9500,bg=0]"
+        mode_normal        "#[fg=0]#[fg=$blue,bg=0]Insert#[fg=8,bg=0]"
+        mode_locked        "#[fg=$blue]#[fg=0,bg=$blue]Normal#[fg=$blue,bg=0]"
+        mode_resize        "#[fg=$orange]#[fg=0,bg=$orange]{name}#[fg=$orange,bg=0]"
+        mode_pane          "#[fg=$orange]#[fg=0,bg=$orange]{name}#[fg=$orange,bg=0]"
+        mode_tab           "#[fg=$orange]#[fg=0,bg=$orange]{name}#[fg=$orange,bg=0]"
+        mode_scroll        "#[fg=$orange]#[fg=0,bg=$orange]{name}#[fg=$orange,bg=0]"
+        mode_enter_search  "#[fg=$orange]#[fg=0,bg=$orange]{name}#[fg=$orange,bg=0]"
+        mode_search        "#[fg=$orange]#[fg=0,bg=$orange]{name}#[fg=$orange,bg=0]"
+        mode_rename_tab    "#[fg=$orange]#[fg=0,bg=$orange]{name}#[fg=$orange,bg=0]"
+        mode_rename_pane   "#[fg=$orange]#[fg=0,bg=$orange]{name}#[fg=$orange,bg=0]"
+        mode_session       "#[fg=$orange]#[fg=0,bg=$orange]{name}#[fg=$orange,bg=0]"
+        mode_move          "#[fg=$orange]#[fg=0,bg=$orange]{name}#[fg=$orange,bg=0]"
+        mode_prompt        "#[fg=$orange]#[fg=0,bg=$orange]{name}#[fg=$orange,bg=0]"
+        mode_tmux          "#[fg=$orange]#[fg=0,bg=$orange]{name}#[fg=$orange,bg=0]"
 
-
-        tab_normal   "#[fg=0]#[fg=8,bg=0,bold]{name}#[fg=0] "
-        tab_active   "#[fg=#00afff]#[fg=#000000,bg=#00afff,bold]{name}#[fg=#00afff] "
+        tab_normal "#[fg=8]#[fg=0,bg=8,bold]{index}#[fg=8,bg=0] {floating_indicator}{sync_indicator}{fullscreen_indicator}{name}#[fg=0] "
+        tab_active "#[fg=$blue]#[fg=0,bg=$blue,bold]{index}#[fg=$blue,bg=0] {floating_indicator}{sync_indicator}{fullscreen_indicator}{name}#[fg=0] "
+        tab_rename "#[fg=$orange]#[fg=0,bg=$orange,bold]{index}#[fg=$orange,bg=0] {name}#[fg=0] "
+        tab_floating_indicator "󰹙 "
+        tab_fullscreen_indicator "󰊔 "
+        tab_sync_indicator "󰓦 "
+        tab_display_count         "5"
+        tab_truncate_start_format "#[fg=0]#[fg=8,bg=0] {count}#[fg=0] "
+        tab_truncate_end_format   "#[fg=0]#[fg=8,bg=0]{count} #[fg=0]"
 
         datetime        "#[fg=8,bg=0,bold]{format}"
         datetime_format "%Y-%m-%d %H:%M:%S 󰥔"
         datetime_timezone "Europe/Berlin"
+    }
+    zellij_forgot location="https://github.com/karimould/zellij-forgot/releases/download/0.4.1/zellij_forgot.wasm" {
+        "LOAD_ZELLIJ_BINDINGS" "true"
+    }
+    zjquit location="https://github.com/cristiand391/zj-quit/releases/download/0.3.1/zj-quit.wasm" {
+        confirm_key "y"
+        cancel_key "Esc"
     }
 }
 
@@ -59,9 +84,9 @@ themes {
         // based on the dracula theme found in the documentation of zellij
         // changed colors
         fg      "#808080" // inactive tab color
-        green   "#00afff" // accent color
-        magenta "#ff0090" // locked indicator
-        orange  "#ff9500" // mode indicator
+        green   "#2fd0ef" // accent color
+        magenta "#f92672" // locked indicator
+        orange  "#f4a331" // mode indicator
 
         // unchanged colors
         bg 40 42 54
@@ -109,7 +134,7 @@ keybinds {
         bind "b" { SwitchToMode "Tmux"; }
 
         // Direct actions
-        bind "q" { Quit; }
+        bind "q" { MessagePlugin "zjquit" { name ""; launch_new true; floating true; }; SwitchToMode "Normal"; }
         bind "n" { NewPane; }
         bind "x" { CloseFocus; }
         bind "Left" { MoveFocusOrTab "Left"; }
@@ -120,6 +145,7 @@ keybinds {
         bind "-" { Resize "Decrease"; }
         bind "[" { PreviousSwapLayout; }
         bind "]" { NextSwapLayout; }
+        bind "?" { LaunchOrFocusPlugin "zellij_forgot" { floating true; }; SwitchToMode "Normal"; }
     }
     shared_except "normal" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }

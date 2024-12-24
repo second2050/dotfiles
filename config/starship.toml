@@ -1,18 +1,21 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
 # prompt
-format = """
-$username$hostname $directory$git_branch$git_commit$git_state$git_status$git_metrics$jobs$cmd_duration
+add_newline = true
+format = """$username$hostname $directory$git_branch$git_commit$git_state$git_status$git_metrics$direnv$jobs$cmd_duration
 ${custom.asciinema}$nix_shell$shell$character"""
 
 [character]
 success_symbol = ""
 error_symbol = "[](red)"
-vicmd_symbol = "[•](green)"
+vimcmd_symbol = "[•](green)"
 
 [directory]
 truncate_to_repo = true
 truncation_length = 4
 truncation_symbol = "…/"
 style = "white"
+read_only = " 󰌾"
 
 [hostname]
 ssh_only = false
@@ -36,7 +39,7 @@ disabled = false
 
 [shell]
 format = "$indicator" # eliminate forced space
-disabled = false # not enabled by default ö.ö
+disabled = false      # not enabled by default ö.ö
 # indicator strings
 bash_indicator = "BA "
 fish_indicator = ""
@@ -49,7 +52,7 @@ xonsh_indicator = "XON"
 unknown_indicator = "?? "
 
 [time]
-disabled=false
+disabled = false
 format = ' [$time]($style) '
 
 [jobs]
@@ -64,10 +67,19 @@ impure_msg = '!'
 pure_msg = '󰄬'
 unknown_msg = ''
 
-[custom.asciinema]
-command='tput blink; echo "REC "'
-when=""" set -q ASCIINEMA_REC && test "$ASCIINEMA_REC" -eq 1 """
-shell=['fish', '-N']
-description='Shows indicator if Asciinema is recording'
-style='bold red'
+[direnv]
+disabled = false
+format = '[$loaded]($style)'
+symbol = ''
+allowed_msg = ''
+not_allowed_msg = ''
+denied_msg = ''
+loaded_msg = '󰉋'
+unloaded_msg = '󱧹'
 
+[custom.asciinema]
+command = 'tput blink; echo "REC "'
+when = """ set -q ASCIINEMA_REC && test "$ASCIINEMA_REC" -eq 1 """
+shell = ['fish', '-N']
+description = 'Shows indicator if Asciinema is recording'
+style = 'bold red'

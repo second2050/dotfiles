@@ -5,6 +5,17 @@ end
 
 require("second2050.lsp.handlers").setup()
 
+mason_lsp.setup({
+    ensure_installed = {
+        "ltex",
+        "html",
+        "gopls",
+        "pylsp",
+        "cssls",
+        "lua_ls",
+    }
+})
+
 mason_lsp.setup_handlers({
     function(server_name)
         local server_cfg_status_ok, specific_opts = pcall(require, "second2050.lsp.settings." .. server_name)
@@ -18,4 +29,3 @@ mason_lsp.setup_handlers({
         require("lspconfig")[server_name].setup(server_opts)
     end
 })
-

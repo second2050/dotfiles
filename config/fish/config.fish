@@ -17,8 +17,8 @@ bind ctrl-h backward-kill-word
 bind ctrl-delete kill-word
 bind \eOM insert-line-under # shift-enter
 bind alt-i __sekii_show_git_status
+bind alt-c "fish_commandline_prepend command"
 if command --query run0 # use run0 if it is available
     bind alt-s "fish_commandline_prepend run0"
-    bind alt-c "fish_commandline_prepend command"
 end
 

@@ -1,10 +1,12 @@
 // client configuration
 copy_on_select false
-theme "second2050"
+theme "karui-colorful"
 default_layout "compact"
 default_mode "locked"
 simplified_ui false
 session_serialization false
+show_startup_tips false
+show_release_notes true
 ui {
     pane_frames {
         rounded_corners true
@@ -80,7 +82,7 @@ plugins {
 }
 
 themes {
-    second2050 {
+    karui-colorful {
         // this theme is bare bones and just changing colors I want changed
         // based on the dracula theme found in the documentation of zellij
         // changed colors
@@ -101,21 +103,43 @@ themes {
 }
 
 keybinds clear-defaults=true {
+    normal {
+        bind "left" { MoveFocusOrTab "left"; }
+        bind "right" { MoveFocusOrTab "right"; }
+        bind "?" {
+            LaunchOrFocusPlugin "zellij_forgot" {
+                floating true
+            }
+            SwitchToMode "locked"
+        }
+        bind "[" { PreviousSwapLayout; }
+        bind "]" { NextSwapLayout; }
+        bind "f" { ToggleFloatingPanes; }
+        bind "Ctrl g" { Write 7; SwitchToMode "locked"; }
+        bind "h" { MoveFocusOrTab "left"; }
+        bind "l" { MoveFocusOrTab "right"; }
+        bind "n" { NewPane; }
+        bind "q" {
+            MessagePlugin "zjquit" {
+                name ""
+                launch_new true
+                floating true
+            }
+            SwitchToMode "locked"
+        }
+        bind "x" { CloseFocus; }
+    }
     locked {
         bind "Ctrl g" { SwitchToMode "normal"; }
     }
     pane {
         bind "left" { MoveFocus "left"; }
-        bind "down" { MoveFocus "down"; }
-        bind "up" { MoveFocus "up"; }
         bind "right" { MoveFocus "right"; }
         bind "c" { SwitchToMode "renamepane"; PaneNameInput 0; }
         bind "d" { NewPane "down"; SwitchToMode "locked"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "locked"; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "locked"; }
         bind "h" { MoveFocus "left"; }
-        bind "j" { MoveFocus "down"; }
-        bind "k" { MoveFocus "up"; }
         bind "l" { MoveFocus "right"; }
         bind "n" { NewPane; SwitchToMode "locked"; }
         bind "p" { SwitchToMode "normal"; }
@@ -123,6 +147,7 @@ keybinds clear-defaults=true {
         bind "w" { ToggleFloatingPanes; SwitchToMode "locked"; }
         bind "x" { CloseFocus; SwitchToMode "locked"; }
         bind "z" { TogglePaneFrames; SwitchToMode "locked"; }
+        bind "i" { TogglePanePinned; SwitchToMode "locked"; }
         bind "tab" { SwitchFocus; }
     }
     tab {
@@ -158,9 +183,6 @@ keybinds clear-defaults=true {
         bind "down" { Resize "Increase down"; }
         bind "up" { Resize "Increase up"; }
         bind "right" { Resize "Increase right"; }
-        bind "+" { Resize "Increase"; }
-        bind "-" { Resize "Decrease"; }
-        bind "=" { Resize "Increase"; }
         bind "H" { Resize "Decrease left"; }
         bind "J" { Resize "Decrease down"; }
         bind "K" { Resize "Decrease up"; }
@@ -229,33 +251,20 @@ keybinds clear-defaults=true {
             }
             SwitchToMode "locked"
         }
-    }
-    normal {
-        bind "Ctrl g" {
-            Write 7; // 7 = ^G
-            SwitchToMode "locked";
+        bind "a" {
+            LaunchOrFocusPlugin "zellij:about" {
+                floating true
+                move_to_focused_tab true
+            };
+            SwitchToMode "locked"
         }
-        bind "left" { MoveFocusOrTab "left"; }
-        bind "down" { MoveFocus "down"; }
-        bind "up" { MoveFocus "up"; }
-        bind "right" { MoveFocusOrTab "right"; }
-        bind "h" { MoveFocusOrTab "left"; }
-        bind "j" { MoveFocus "down"; }
-        bind "k" { MoveFocus "up"; }
-        bind "l" { MoveFocusOrTab "right"; }
-        bind "-" { Resize "Decrease"; }
+    }
+    shared_among "normal" "resize" {
         bind "+" { Resize "Increase"; }
+        bind "-" { Resize "Decrease"; }
         bind "=" { Resize "Increase"; }
-        bind "[" { PreviousSwapLayout; }
-        bind "]" { NextSwapLayout; }
-        bind "f" { ToggleFloatingPanes; }
-        bind "n" { NewPane; }
-        bind "x" { CloseFocus; }
-        bind "q" { MessagePlugin "zjquit" { name ""; launch_new true; floating true; }; SwitchToMode "locked"; }
-        bind "?" { LaunchOrFocusPlugin "zellij_forgot" { floating true; }; SwitchToMode "locked"; }
     }
     shared_except "locked" "renametab" "renamepane" {
-        bind "Ctrl g" { SwitchToMode "locked"; }
         bind "Ctrl q" { Quit; }
     }
     shared_except "locked" "entersearch" {
@@ -279,8 +288,17 @@ keybinds clear-defaults=true {
     shared_among "normal" "resize" "tab" "scroll" "prompt" "tmux" {
         bind "p" { SwitchToMode "pane"; }
     }
+    shared_among "normal" "pane" {
+        bind "down" { MoveFocus "down"; }
+        bind "up" { MoveFocus "up"; }
+        bind "j" { MoveFocus "down"; }
+        bind "k" { MoveFocus "up"; }
+    }
     shared_except "locked" "resize" "pane" "tab" "entersearch" "renametab" "renamepane" {
         bind "r" { SwitchToMode "resize"; }
+    }
+    shared_except "normal" "locked" "renametab" "renamepane" {
+        bind "Ctrl g" { SwitchToMode "locked"; }
     }
     shared_among "scroll" "search" {
         bind "PageDown" { PageScrollDown; }

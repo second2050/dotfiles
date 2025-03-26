@@ -4,7 +4,9 @@ function fish_config --description "Open the shell configuration"
     if test -n "$argv"
         fish_config_internal $argv
     else
-        $EDITOR $__fish_config_dir
+        pushd $__fish_config_dir
+        $EDITOR
+        popd
     end
 end
 

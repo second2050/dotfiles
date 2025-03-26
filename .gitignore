@@ -5,9 +5,6 @@ config/sway/config.d/10_wallpaper.conf
 __pycache__
 __init__.py
 
-# GTK SMB server information
-config/gtk-*/servers
-
 # lock files
 config/nvim/lazy-lock.json
 

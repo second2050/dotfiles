@@ -11,3 +11,6 @@ config/gtk-*/servers
 # lock files
 config/nvim/lazy-lock.json
 
+# machine specific files
+config/fish/fish_variables
+

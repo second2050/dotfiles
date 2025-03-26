@@ -68,7 +68,8 @@ return {
                     package_pending = "",
                     package_uninstalled = ""
                 }
-            }
+            },
+            PATH = "append",
         },
     },
     {
@@ -269,7 +270,7 @@ return {
     },
     {
         -- Nice statusbar
-        "freddiehaddad/feline.nvim",
+        "second2050/feline.nvim",
         name = "feline",
         dependencies = {
             "SmiteshP/nvim-navic",

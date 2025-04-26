@@ -1,4 +1,7 @@
 function fish_greeting
+    if echo $PATH | grep /nix/store &> /dev/null
+        return
+    end
     if not set -q fish_greeting
         if command --query pokemon-colorscripts && tty | ! grep tty > /dev/null && ! set -q ASCIINEMA_REC
             pokemon-colorscripts --no-title --random 1-5

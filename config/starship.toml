@@ -62,14 +62,14 @@ symbol = '󰫢'
 disabled = false
 heuristic = true
 format = '[$symbol$state( \($name\))]($style) '
-symbol = ''
+symbol = '󱄅'
 impure_msg = '!'
 pure_msg = '󰄬'
 unknown_msg = ''
 
 [direnv]
 disabled = false
-format = '[$loaded]($style)'
+format = '[$loaded]($style) '
 symbol = ''
 allowed_msg = ''
 not_allowed_msg = ''

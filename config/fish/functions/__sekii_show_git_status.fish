@@ -21,9 +21,9 @@ function __sekii_show_git_status
             end
 
             # show non pushed commits
-            git -c color.ui=always log --max-count $__sekii_git_commit_count | awk '{print "   " $0}'
-            if test "$__sekii_git_commit_count" -ne "0"; echo ""; end
-            git -c color.ui=always log --oneline | tail -n +(math $__sekii_git_commit_count + 1) | awk '{print "   " $0}'
+            git -c color.ui=always log --graph --max-count $__sekii_git_commit_count | awk '{print "   " $0}'
+            # if test "$__sekii_git_commit_count" -ne "0"; echo ""; end
+            git -c color.ui=always log --graph --oneline | tail -n +(math $__sekii_git_commit_count + 1) | awk '{print "   " $0}'
         end &| less --raw-control-chars
     end
 end

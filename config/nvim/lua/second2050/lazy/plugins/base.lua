@@ -57,32 +57,11 @@ return {
         },
     },
     {
-        "williamboman/mason.nvim",
-        lazy = true,
-        cmd = "Mason",
-        event = { "BufRead" },
-        opts = {
-            ui = {
-                icon = {
-                    package_installed = "",
-                    package_pending = "",
-                    package_uninstalled = ""
-                }
-            },
-            PATH = "append",
-        },
-    },
-    {
-        "williamboman/mason-lspconfig.nvim",
+        "dundalek/lazy-lsp.nvim",
+        dependencies = { "neovim/nvim-lspconfig" },
         config = function()
-            require("second2050.lsp.mason")
-        end,
-        dependencies = {
-            "neovim/nvim-lspconfig",
-            "williamboman/mason.nvim",
-        },
-        lazy = true,
-        event = "BufRead",
+            require("second2050.lsp.lazy-lsp")
+        end
     },
     {
         -- The completion plugin

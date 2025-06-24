@@ -269,5 +269,6 @@ return {
             require("inlay-hints").setup()
         end
     },
-    { "https://github.com/imsnif/kdl.vim" }
+    { "https://github.com/imsnif/kdl.vim" },
+    { "lewis6991/gitsigns.nvim" }
 }

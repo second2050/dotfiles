@@ -47,5 +47,11 @@ wk.add({
     { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", remap = false },
     { "<leader>fl", "<cmd>Telescope live_grep<cr>", desc = "Live Grep", remap = false },
     { "<leader>h", "<cmd>noh<cr>", desc = "Dismiss Highlights", remap = false },
+    { "<leader>g", group = "Git", remap = false },
+    { "<leader>gd", "<cmd>Gitsigns toggle_deleted<cr>", desc = "Show Deletions", remap = false },
+    { "<leader>gb", group = "Blame", remap = false },
+    { "<leader>gbi", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Show Blame inline", remap = false },
+    { "<leader>gbs", "<cmd>Gitsigns blame<cr>", desc = "Show Blame in sidebar", remap = false },
+    { "<leader>gbh", "<cmd>Gitsigns blame_line<cr>", desc = "Show Blame", remap = false },
 })
 

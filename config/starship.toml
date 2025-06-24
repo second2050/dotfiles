@@ -78,7 +78,7 @@ loaded_msg = '󰉋'
 unloaded_msg = '󱧹'
 
 [custom.asciinema]
-command = 'tput blink; echo "REC "'
+command = 'echo -e "\e[0;5m\e[31m\e[1mREC\e[0m"'
 when = """ set -q ASCIINEMA_REC && test "$ASCIINEMA_REC" -eq 1 """
 shell = ['fish', '-N']
 description = 'Shows indicator if Asciinema is recording'

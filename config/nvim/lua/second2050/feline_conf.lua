@@ -45,7 +45,7 @@ local c = {
                 name = "NeovimModeHLColor",
             }
         end,
-        left_sep = " ",
+        left_sep = "",
         right_sep = " ",
     },
     gitBranch = {
@@ -56,7 +56,7 @@ local c = {
             style = "bold",
         },
         left_sep = " ",
-        right_sep = " ",
+        right_sep = "",
     },
     gitDiffAdded = {
         provider = "git_diff_added",
@@ -65,7 +65,7 @@ local c = {
             bg = "bg",
         },
         left_sep = " ",
-        right_sep = " ",
+        right_sep = "",
     },
     gitDiffRemoved = {
         provider = "git_diff_removed",
@@ -74,7 +74,7 @@ local c = {
             bg = "bg",
         },
         left_sep = " ",
-        right_sep = " ",
+        right_sep = "",
     },
     gitDiffChanged = {
         provider = "git_diff_changed",
@@ -83,7 +83,7 @@ local c = {
             bg = "bg",
         },
         left_sep = " ",
-        right_sep = "right_filled",
+        right_sep = "",
     },
     separator = {
         provider = "",
@@ -185,7 +185,7 @@ local c = {
             style = "bold",
         },
         left_sep = " ",
-        right_sep = " ",
+        right_sep = "",
     },
     scroll_bar = {
         provider = "scroll_bar",

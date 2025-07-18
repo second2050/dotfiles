@@ -1,3 +1,7 @@
+if not status is-interactive
+    return
+end
+
 if not command --query nix
     return
 end

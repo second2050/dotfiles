@@ -6,6 +6,7 @@ if not set -q XDG_CACHE_HOME; set --export XDG_CACHE_HOME "$HOME/.cache"; end
 if not set -q XDG_DATA_HOME; set --export XDG_DATA_HOME "$HOME/.local/share"; end
 if not set -q XDG_STATE_HOME; set --export XDG_STATE_HOME "$HOME/.local/state"; end
 set FISH_FUNCTION_DIR "$__fish_config_dir/functions"
+if command --query nvim; set --export MANPAGER "nvim -c Man!"; end
 
 ## Less options
 set --local less_promptM '?f%f .?n?m(%T %i of %m) ..?ltlines %lt-%lb?L/%L. :byte %bB?s/%s. .?e(END) ?x- Next\: %x.:?pB%pB\%..%t (press h for help or q to quit)'

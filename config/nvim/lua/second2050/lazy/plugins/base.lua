@@ -2,6 +2,10 @@ return {
     "nvim-lua/plenary.nvim",
     -- Colorscheme
     "tanvirtin/monokai.nvim",
+    -- Additional Filetypes
+    "imsnif/kdl.vim",
+    "isobit/vim-caddyfile",
+    -- Other Plugins
     {
         "xiyaowong/transparent.nvim",
         config = function()
@@ -243,7 +247,6 @@ return {
         end,
     },
     { "echasnovski/mini.sessions", version = false, opts = {} },
-    { "https://github.com/imsnif/kdl.vim" },
     {
         "lewis6991/gitsigns.nvim",
         opts = {

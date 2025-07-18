@@ -195,8 +195,11 @@ return {
         config = function()
             require("lspsaga").setup({
                 ui = {
-                    theme = "round",
                     border = "rounded",
+                    code_action = "",
+                },
+                lightbulb = {
+                    virtual_text = false,
                 },
             })
         end,
@@ -240,16 +243,13 @@ return {
         end,
     },
     { "echasnovski/mini.sessions", version = false, opts = {} },
-    {
-        "MysticalDevil/inlay-hints.nvim",
-        event = "LspAttach",
-        dependencies = { "neovim/nvim-lspconfig" },
-        config = function()
-            require("inlay-hints").setup()
-        end
-    },
     { "https://github.com/imsnif/kdl.vim" },
-    { "lewis6991/gitsigns.nvim" },
+    {
+        "lewis6991/gitsigns.nvim",
+        opts = {
+            current_line_blame = true,
+        },
+    },
     {
         "folke/noice.nvim",
         event = "VeryLazy",
@@ -348,8 +348,16 @@ return {
     },
     {
         "NMAC427/guess-indent.nvim",
-        config = function ()
+        config = function()
             require('guess-indent').setup {}
+        end,
+    },
+    {
+        "MeanderingProgrammer/render-markdown.nvim",
+        after = { 'nvim-treesitter' },
+        requires = { 'echasnovski/mini.icons', opt = true },
+        config = function()
+            require('render-markdown').setup({})
         end,
     },
 }

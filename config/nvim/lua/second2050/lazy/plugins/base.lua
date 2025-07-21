@@ -49,7 +49,19 @@ return {
         dependencies = { "neovim/nvim-lspconfig" },
         config = function()
             require("second2050.lsp.lazy-lsp")
-        end
+        end,
+        cond = function()
+            if vim.fn.executable("nix") == 1 then
+                return true
+            else
+                vim.notify_once(
+                    "`nix` not available, no language servers will be available!",
+                    vim.log.levels.WARN,
+                    { level = "warning" }
+                )
+                return false
+            end
+        end,
     },
     {
         -- The completion plugin
@@ -291,6 +303,26 @@ return {
             },
             messages = {
                 view_search = "mini",
+            },
+            routes = {
+                {
+                    filter = { event = 'msg_show', kind = { 'shell_out' } },
+                    view = 'split',
+                    opts = {
+                        level = 'info',
+                        skip = false,
+                        replace = false,
+                    },
+                },
+                {
+                    filter = { event = 'msg_show', kind = { 'shell_err' } },
+                    view = 'notify',
+                    opts = {
+                        level = 'error',
+                        skip = false,
+                        replace = false,
+                    },
+                },
             },
         },
         dependencies = {

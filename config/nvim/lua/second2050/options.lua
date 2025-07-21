@@ -18,13 +18,25 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
--- 
+-- misc settings
 vim.opt.clipboard = "unnamedplus" -- Use System Clipboard
 vim.opt.showmode = false
 vim.opt.numberwidth = 4
 vim.opt.signcolumn = "yes"
+if vim.env.ZELLIJ == nil then -- with zellij everything breaks...
+    vim.opt.title = true
+end
 
 -- transparent winbar
 vim.api.nvim_set_hl(0, "WinBar", {fg = "#ffffff", bg = nil})
 vim.api.nvim_set_hl(0, "WinBarNC", {fg = "#ffffff", bg = nil})
 
+-- windows specifics
+if vim.loop.os_uname().sysname == "Windows_NT" then
+    vim.opt.shell = "pwsh"
+    vim.opt.shellcmdflag = "-NoLogo -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+    vim.opt.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
+    vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8; exit $LastExitCode"
+    vim.opt.shellquote = ""
+    vim.opt.shellxquote = ""
+end

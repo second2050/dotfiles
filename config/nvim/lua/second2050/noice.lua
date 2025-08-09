@@ -27,6 +27,7 @@ return {
             filter = { pattern = "^:%s*!", icon = "$", lang = "fish" },
             lua = { pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" }, icon = "", lang = "lua" },
             help = { pattern = "^:%s*he?l?p?%s+", icon = "?" },
+            suda = { pattern = "^Suda:", icon = " " },
             input = { view = "cmdline_input", icon = "󰥻 " },
         }
     },

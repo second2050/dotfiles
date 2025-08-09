@@ -51,6 +51,9 @@ lazy_lsp.setup {
                         nixos = { expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations." .. hostname .. ".options" },
                         home_manager = { expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations." .. hostname .. ".options.home-manager.users.type.getSubOptions []" },
                     },
+                    formatting = {
+                        command = "nixfmt",
+                    },
                 },
             },
         },

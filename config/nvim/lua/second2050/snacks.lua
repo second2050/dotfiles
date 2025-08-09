@@ -1,6 +1,6 @@
 return {
     indent = { enabled = true },
-    scroll = { enabled = true },
+    scroll = { enabled = not vim.g.neovide },
     notifier = { enabled = true },
     dashboard = {
         enabled = true,

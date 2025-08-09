@@ -267,11 +267,14 @@ return {
     },
     {
         "folke/noice.nvim",
-        event = "VeryLazy",
+        priority = 1000,
+        lazy = false,
+        -- event = "VeryLazy",
         opts = require("second2050.noice"),
         dependencies = {
             -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
             "MunifTanjim/nui.nvim",
+            "nvim-treesitter/nvim-treesitter",
         },
     },
     {
@@ -297,4 +300,5 @@ return {
             require('render-markdown').setup({})
         end,
     },
+    "lambdalisue/vim-suda",
 }

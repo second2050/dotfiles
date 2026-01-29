@@ -11,7 +11,7 @@ function fish_right_prompt
         echo -e "\e[90m(󰗹)\e[0m"
     # show mommy in other cases if available
     else if command -q mommy && ! set -q MOMMY_SLEEP && ! set -q ASCIINEMA_REC
-        mommy -1 -s $cmd_status 2> /dev/null
+        echo -e "\e[90m$(mommy -1 -s $cmd_status 2> /dev/null)\e[0m"
     # show cute kaomojis based on status if mommy is n/a or asleep
     else if test "$cmd_status" -eq 0
         echo -e "\e[90m(>‿◕)~♥\e[0m"

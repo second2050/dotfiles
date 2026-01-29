@@ -5,7 +5,7 @@ MOMMY_SWEETIE="$(printf '\147\151\162\154')"
 MOMMY_PREFIX=""
 MOMMY_SUFFIX=""
 
-MOMMY_COLOR="010"
+MOMMY_COLOR=
 
 # taken from Gankra/cargo-mommy
 MOMMY_COMPLIMENTS="

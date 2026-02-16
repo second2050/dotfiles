@@ -6,7 +6,7 @@ if status is-interactive && set -q SSH_CLIENT && command --query zellij
     # if agent forwarding is in use, symlink the SSH_AGENT_SOCK on connection
     # to a known location which can be updated to a new socket on reconnection
     if set -q SSH_AUTH_SOCK
-        ln -sf $SSH_AUTH_SOCK $HOME/.ssh/agent.sock
+        ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/agent.sock"
         set SSH_AUTH_SOCK "$HOME/.ssh/agent.sock"
     end
     exec zellij attach --create remote

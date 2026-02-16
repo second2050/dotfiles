@@ -22,9 +22,11 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Visual --
--- Stay in indent mode
+-- Stay in mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+keymap("v", "<C-a>", "<C-a>gv", opts)
+keymap("v", "<C-x>", "<C-x>gv", opts)
 
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
@@ -42,6 +44,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("n", "<C-n>", ":Neotree toggle<cr>", opts)
 
 wk.add({
+    { "<leader>c", "<cmd>lua vim.opt.list = not vim.opt.list:get()<cr>", desc = "Toggle List Chars", remap = false },
     { "<leader>f", group = "Find", remap = false },
     { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Search Buffers", remap = false },
     { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", remap = false },

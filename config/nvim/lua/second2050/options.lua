@@ -23,6 +23,7 @@ vim.opt.clipboard = "unnamedplus" -- Use System Clipboard
 vim.opt.showmode = false
 vim.opt.numberwidth = 4
 vim.opt.signcolumn = "yes"
+vim.opt.listchars = "tab:<->,multispace:·,space:␣,trail:·,eol:↵"
 if vim.env.ZELLIJ == nil then -- with zellij everything breaks...
     vim.opt.title = true
 end

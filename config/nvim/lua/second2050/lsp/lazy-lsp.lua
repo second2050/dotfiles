@@ -12,6 +12,7 @@ end
 
 require("second2050.lsp.handlers").setup()
 lazy_lsp.setup {
+    use_vim_lsp_config = true,
     prefer_local = true,
     preferred_servers = {
         html = { "html", "ltex" },

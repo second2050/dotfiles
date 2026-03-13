@@ -14,7 +14,7 @@ ui {
 }
 
 plugins {
-    tab-bar location="https://github.com/dj95/zjstatus/releases/download/v0.19.1/zjstatus.wasm" {
+    tab-bar location="https://github.com/dj95/zjstatus/releases/download/v0.22.0/zjstatus.wasm" {
         color_orange "#f4a331"
         color_blue "#2fd0ef"
 
@@ -22,13 +22,13 @@ plugins {
         tab_normal   "#[fg=0]#[fg=8,bg=0,bold]{name}#[fg=0] "
         tab_active   "#[fg=$blue]#[fg=#000000,bg=$blue,bold]{name}#[fg=$blue] "
     }
-    compact-bar location="https://github.com/dj95/zjstatus/releases/download/v0.19.1/zjstatus.wasm" {
+    compact-bar location="https://github.com/dj95/zjstatus/releases/download/v0.22.0/zjstatus.wasm" {
         color_orange "#f4a331"
         color_blue "#2fd0ef"
 
-        format_left  "{mode}#[fg=7,bg=0,bold]{session}#[fg=0]"
-        format_center "{tabs}"
-        format_right "#[fg=0]{notifications}{datetime}#[fg=0]"
+        format_left  "{mode}#[fg=7,bg=0,bold]{session}#[fg=0] {tabs}"
+        format_center ""
+        format_right "{pipe_zjstatus_hints}"
         format_space ""
         format_precedence "lrc"
         format_hide_on_overlength "true"
@@ -71,6 +71,7 @@ plugins {
         datetime        "#[fg=8,bg=0,bold]{format}"
         datetime_format "%Y-%m-%d %H:%M:%S 󰥔"
         datetime_timezone "Europe/Berlin"
+        pipe_zjstatus_hints_format "{output}"
     }
     zellij_forgot location="https://github.com/karimould/zellij-forgot/releases/download/0.4.1/zellij_forgot.wasm" {
         "LOAD_ZELLIJ_BINDINGS" "true"
@@ -79,6 +80,16 @@ plugins {
         confirm_key "y"
         cancel_key "Esc"
     }
+    zjstatus-hints location="https://github.com/b0o/zjstatus-hints/releases/download/v0.1.4/zjstatus-hints.wasm" {
+        max_length 0 // 0 = unlimited
+        overflow_str "…"
+        pipe_name "zjstatus_hints"
+        hide_in_base_mode true
+    }
+}
+
+load_plugins {
+    zjstatus-hints
 }
 
 themes {

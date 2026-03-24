@@ -1,17 +1,18 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-	name = second2050
+	name = Karui \"second2050\" Hoshimiya
 	email = git@second2050.me
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFlAc7SsDm9n72StyPmm6CJsLFCd14SOb/cXDoLxiKRN
 [init]
 	defaultBranch = dev
 [gpg "ssh"]
-	allowedSignersFile = /home/second2050/.ssh/allowed_signers
+	allowedSignersFile = ~/.ssh/allowed_signers
 [gpg]
 	format = ssh
 [commit]
 	gpgsign = true
+	template = ~/.config/git/commit_template
 [pull]
 	rebase = true
 [filter "lfs"]
@@ -23,3 +24,4 @@
 	external = difft --display=inline
 [alias]
     diff2 = -c diff.external='difft --display=side-by-side' diff
+	browse = !soft browse

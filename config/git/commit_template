@@ -1,0 +1,13 @@
+
+
+# Conventional Commits:
+# Structure: `type[(scope)][!]: commit title`
+#
+# Types: 
+#  - feat: Feature Introduction (SemVer MINOR)
+#  - fix: Bugfix (SemVer PATCH)
+#  - chore: Recurring Changes, e.g. updating of dependencies
+#  - ci: Pipeline changes
+#  - docs: Documentation changes
+#  - refactor: Code refactoring
+# `!` indicates breaking changes (SemVer MAJOR)

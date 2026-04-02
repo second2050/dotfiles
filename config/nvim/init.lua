@@ -1,2 +1,3 @@
-require "second2050"
-
+require("config.lazy")
+require("config.options")
+require("config.keybinds")

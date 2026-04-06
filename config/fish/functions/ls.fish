@@ -1,6 +1,6 @@
 if command --query lsd
     function ls --wraps "lsd" --description "List contents of directory"
-        lsd $argv; 
+        lsd --hyperlink auto $argv; 
     end
 end
 

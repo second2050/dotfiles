@@ -4,10 +4,10 @@ if not command --query tput || not status is-interactive
 end
 
 # Move Prompt to bottom of the terminal
-tput cup $COLUMNS 0
+tput cup (math $LINES - 3) 0
 function clear --wraps clear
     command clear $argv
-    tput cup $COLUMNS 0
+    tput cup (math $LINES - 3) 0
 end
 
 # make ctrl-l keep the prompt at the bottom

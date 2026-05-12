@@ -15,6 +15,7 @@ vim.opt.showmode = false
 vim.opt.numberwidth = 4
 vim.opt.signcolumn = "yes"
 vim.opt.listchars = "tab:<->,multispace:·,space:␣,trail:·,eol:↵"
+vim.opt.scrolloff = 5
 
 -- transparent winbar
 vim.api.nvim_set_hl(0, "WinBar", {fg = "#ffffff", bg = nil})

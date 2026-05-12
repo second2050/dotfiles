@@ -48,6 +48,7 @@ wk.add({
     { "<leader>f", group = "Find", remap = false },
     { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Search Buffers", remap = false },
     { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", remap = false },
+    { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Find Git File", remap = false },
     { "<leader>fl", "<cmd>Telescope live_grep<cr>", desc = "Live Grep", remap = false },
     { "<leader>ft", "<cmd>Telescope treesitter<cr>", desc = "Search locals", remap = false },
     { "<leader>h", "<cmd>noh<cr>", desc = "Dismiss Highlights", remap = false },

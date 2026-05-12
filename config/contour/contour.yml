@@ -463,6 +463,9 @@ profiles:
         #
         # Default: false
         option_as_alt: false
+    obake:
+        ssh:
+            host: obake
     shell: 
         escape_sandbox: true
         copy_last_mark_range_offset: 0
@@ -671,8 +674,8 @@ color_schemes:
 
         # Colors for the IME (Input Method Editor) area.
         input_method_editor:
-            foreground: '#f8f8f2'
-            background: '#f92672'
+            foreground: '#f92672'
+            background: '#191919'
 
         # Normal colors
         normal:
@@ -861,3 +864,4 @@ input_mapping:
     - { mods: []                  , mouse: WheelUp               , action: ScrollUp }           
     - { mods: [Alt,Control]       , key: 'L'                     , action: HintMode, patterns: url|filepath|ipv4|ipv6, hint_action: Open }
     - { mods: [Alt,Control]       , key: '['                     , action: ViNormalMode, mode: 'Insert' }
+    - { mods: [Shift]             , key: 'R'                     , action: SetTabName, mode: '~Insert' }

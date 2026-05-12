@@ -4,7 +4,12 @@ function fish_greeting
     end
     if not set -q fish_greeting
         if command --query pokemon-colorscripts && tty | ! grep tty > /dev/null && ! set -q ASCIINEMA_REC
-            pokemon-colorscripts --no-title --random 1-5
+            set -l __karui_pokemon_output (pokemon-colorscripts --random 1-5 | string split "\n")
+            set -gx __karui_pokemon "$__karui_pokemon_output[1]"
+            set -gx __karui_adjective (random choice cute adorable sweet lovely caring)
+            for l in $__karui_pokemon_output[2..]
+                printf '%s\n' "$l"
+            end
         else
             set -l line (_ 'Welcome to °<><, the friendly interactive shell')
             set -g fish_greeting "$line"

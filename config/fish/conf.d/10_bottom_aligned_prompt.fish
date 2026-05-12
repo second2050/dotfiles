@@ -4,7 +4,9 @@ if not command --query tput || not status is-interactive
 end
 
 # Move Prompt to bottom of the terminal
-tput cup (math $LINES - 3) 0
+if test "$SHLVL" = "1"
+    tput cup (math $LINES - 3) 0
+end
 function clear --wraps clear
     command clear $argv
     tput cup (math $LINES - 3) 0

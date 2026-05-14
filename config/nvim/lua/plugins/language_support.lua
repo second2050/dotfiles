@@ -133,26 +133,17 @@ return {
     },
     {
         -- Actually color colorcodes like #ff0000
-        "norcalli/nvim-colorizer.lua",
-        name = "colorizer",
-        config = function()
-            require("colorizer").setup({
-                "*",
-                html = {
-                    names = true,
-                    css = true,
+        "catgoose/nvim-colorizer.lua",
+        opts = {
+            display = {
+                mode = "virtualtext",
+                virtualtext = {
+                    position = "before",
                 },
-                css = {
-                    names = true,
-                    css = true,
-                },
-            }, {
-                names = false,
-                mode = "background",
-            })
-        end,
+            },
+        },
         lazy = true,
-        event = { "BufRead" },
+        event = { "BufReadPre" },
     },
     {
         "3rd/image.nvim",

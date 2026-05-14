@@ -5,9 +5,6 @@ config/sway/config.d/10_wallpaper.conf
 __pycache__
 __init__.py
 
-# lock files
-config/nvim/lazy-lock.json
-
 # machine specific files
 config/fish/fish_variables
 

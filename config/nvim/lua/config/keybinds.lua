@@ -45,20 +45,23 @@ keymap("n", "<C-n>", ":Neotree toggle<cr>", opts)
 
 wk.add({
     { "<leader>c", "<cmd>lua vim.opt.list = not vim.opt.list:get()<cr>", desc = "Toggle List Chars", remap = false },
+    { "<leader>e", group = "Teamtype", remap = false },
+    { "<leader>ef", "<cmd>TeamtypeFollow<cr>", desc = "Follow Peer", remap = false },
+    { "<leader>ej", "<cmd>TeamtypeJumpToCursor<cr>", desc = "Jump to Cursor", remap = false },
     { "<leader>f", group = "Find", remap = false },
     { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Search Buffers", remap = false },
     { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", remap = false },
     { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Find Git File", remap = false },
     { "<leader>fl", "<cmd>Telescope live_grep<cr>", desc = "Live Grep", remap = false },
     { "<leader>ft", "<cmd>Telescope treesitter<cr>", desc = "Search locals", remap = false },
-    { "<leader>h", "<cmd>noh<cr>", desc = "Dismiss Highlights", remap = false },
     { "<leader>g", group = "Git", remap = false },
-    { "<leader>gd", "<cmd>Gitsigns toggle_deleted<cr>", desc = "Toggle Inline Deletions", remap = false },
     { "<leader>gD", "<cmd>Gitsigns diffthis<cr>", desc = "Diff current file", remap = false },
     { "<leader>gb", group = "Blame", remap = false },
+    { "<leader>gbh", "<cmd>Gitsigns blame_line<cr>", desc = "Show Blame", remap = false },
     { "<leader>gbi", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Show Blame inline", remap = false },
     { "<leader>gbs", "<cmd>Gitsigns blame<cr>", desc = "Show Blame in sidebar", remap = false },
-    { "<leader>gbh", "<cmd>Gitsigns blame_line<cr>", desc = "Show Blame", remap = false },
+    { "<leader>gd", "<cmd>Gitsigns toggle_deleted<cr>", desc = "Toggle Inline Deletions", remap = false },
+    { "<leader>h", "<cmd>noh<cr>", desc = "Dismiss Highlights", remap = false },
     { "<leader>m", "<cmd>Noice telescope<cr>", desc = "View messages", remap = false },
 })
 

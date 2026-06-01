@@ -14,5 +14,9 @@ return {
             define_autocmd = true,
             autostart_fcitx5 = false
         }
+    },
+    {
+        "teamtype/teamtype-nvim",
+        lazy = false
     }
 }

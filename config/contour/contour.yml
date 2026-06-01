@@ -864,4 +864,5 @@ input_mapping:
     - { mods: []                  , mouse: WheelUp               , action: ScrollUp }           
     - { mods: [Alt,Control]       , key: 'L'                     , action: HintMode, patterns: url|filepath|ipv4|ipv6, hint_action: Open }
     - { mods: [Alt,Control]       , key: '['                     , action: ViNormalMode, mode: 'Insert' }
+    - { mods: [Alt]               , key: 'Escape'                , action: ViNormalMode, mode: 'Insert' }
     - { mods: [Shift]             , key: 'R'                     , action: SetTabName, mode: '~Insert' }

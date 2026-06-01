@@ -1,3 +1,3 @@
 function scream
-    printf '#3%s\n#4%s\n' "$argv" "$argv"
+    printf '\e#3%s\n\e#4%s\n' "$argv" "$argv"
 end
